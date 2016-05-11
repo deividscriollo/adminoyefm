@@ -1,10 +1,17 @@
 <div class="bmd-component example-box">
-  <h2>Noticias</h2>
   <ul class="nav nav-pills bmd-nav-pills-primary">
-    <li class="active"><a href="#/Noticias/add" class="bmd-ripple">Publicar</a></li>
-    <li><a href="#/Noticias/preview">Vista Previa</a></li>
-    <li><a href="#/Noticias/update">Modificar/Eliminar</a></li>
-    <li><a href="#/Noticias/edit">Otro</a></li>
+    <li  ng-class="{active: ('noticias.add' | routeSegmentStartsWith)}">
+      <a href="#/Noticias/add" class="bmd-ripple">Publicar</a>
+    </li>
+    <li ng-class="{active: ('noticias.preview' | routeSegmentStartsWith)}">
+      <a href="#/Noticias/preview">Vista Previa</a>
+    </li>
+    <li ng-class="{active: ('noticias.update' | routeSegmentStartsWith)}">
+      <a href="#/Noticias/update">Modificar/Eliminar</a>
+    </li>
+    <li ng-class="{active: ('noticias.edit' | routeSegmentStartsWith)}">
+      <a href="#/Noticias/edit">Otro</a>
+    </li>
   </ul>
   <br>
   <div class="bmd-component example-box">

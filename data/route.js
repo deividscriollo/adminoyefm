@@ -39,20 +39,20 @@
                 .segment('add', {
                     'default': true,
                     templateUrl: 'data/noticias/view/add.html',
-                    controller: 'imbahomeCtrl'
+                    controller: 'NoticiasAddCtrl'
                 })
                 .segment('preview', {
-                    templateUrl: 'data/noticias/view/preview.html'
-                    // controller: 'imbahomeCtrl'
+                    templateUrl: 'data/noticias/view/preview.html',
+                    controller: 'NoticiasPreviewCtrl'
                     // dependencies: ['id']
                 })
                 .segment('update', {
-                    templateUrl: 'data/noticias/view/update.html'
-                    // controller: 'imbahomeCtrl'
+                    templateUrl: 'data/noticias/view/update.html',
+                    controller: 'NoticiasUpdateCtrl'
                 })
                 .segment('edit', {
-                    templateUrl: 'data/noticias/view/edit.html'
-                    // controller: 'imbahomeCtrl'
+                    templateUrl: 'data/noticias/view/edit.html',
+                    controller: 'NoticiasEditCtrl'
                 })                               
             .up()
         .segment('s1', {
@@ -80,12 +80,15 @@
         })
     });
 
-    app.controller('mainController', function($scope, $rootScope, $localStorage){
+    app.controller('mainController', function($scope, $rootScope){
         $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute){
             $rootScope.animation = currRoute.animation;
         });
         // $scope.sucursal=datainfo.sucursal[0];
         // console.log($scope.sucursal);
+    });
+    app.controller('noticiasaddCtrl', function($scope, $rootScope){
+       
     });
 
 
