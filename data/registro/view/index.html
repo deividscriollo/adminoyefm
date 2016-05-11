@@ -1,0 +1,167 @@
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8" style="transition: all 0.35s cubic-bezier(0.55, 0, 0.1, 1);">
+        <div class="panel panel-default bmd-card">
+            <div class="panel-body bmd-card-image">
+                <div class="bmd-card-image-holder">
+                    <img class="img-responsive" src="img/work3.jpg">
+                </div>
+            </div>
+            <br>
+            <div class="col-lg-5">
+                <form class="form-horizontal" name="formreg">
+                    <fieldset>
+                        <div class="form-group has-primary">
+                            <label for="inputPassword" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-success">arrow_forward</i></label>
+                            <div class="col-lg-9">
+                                <div class="bmd-field-group">
+                                    <input type="password" class="bmd-input" id="Razon Social" placeholder="Razon Social" ng-model="razon_social" disabled>
+                                    <span class="bmd-bar"></span>
+                                    <label class="bmd-label">Razon Social</label>
+                                    <span class="bmd-field-feedback"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group has-primary">
+                            <label for="inputEmail" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-success">arrow_forward</i></label>
+                            <div class="col-lg-9">
+                                <div class="bmd-field-group">
+                                    <input type="text" class="bmd-input" placeholder="Nombre Comercial" ng-model="nombre_comercial" disabled>
+                                    <span class="bmd-bar"></span>
+                                    <label class="bmd-label">Nombre Comercial</label>
+                                    <span class="bmd-field-feedback"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group has-primary">
+                            <label for="inputEmail" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-success">arrow_forward</i></label>
+                            <div class="col-lg-9">
+                                <div class="bmd-field-group">
+                                    <input type="text" class="bmd-input" placeholder="Estado del Contribuyente en el RUC" ng-model="estado_contribuyente" disabled>
+                                    <span class="bmd-bar"></span>
+                                    <label class="bmd-label">Estado del Contribuyente en el RUC</label>
+                                    <span class="bmd-field-feedback"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group has-primary">
+                            <label for="inputEmail" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-success">arrow_forward</i></label>
+                            <div class="col-lg-9">
+                                <div class="bmd-field-group">
+                                    <input type="text" class="bmd-input" placeholder="Clase de Contribuyente" ng-model="clase_contribuyente" disabled>
+                                    <span class="bmd-bar"></span>
+                                    <label class="bmd-label">Clase de Contribuyente</label>
+                                    <span class="bmd-field-feedback"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group has-primary">
+                            <label for="inputEmail" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-success">arrow_forward</i></label>
+                            <div class="col-lg-9">
+                                <div class="bmd-field-group">
+                                    <input type="text" class="bmd-input" placeholder="Tipo de Contribuyente" ng-model="tipo_contribuyente" disabled>
+                                    <span class="bmd-bar"></span>
+                                    <label class="bmd-label">Tipo de Contribuyente</label>
+                                    <span class="bmd-field-feedback"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group has-primary">
+                            <label for="inputEmail" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-success">arrow_forward</i></label>
+                            <div class="col-lg-9">
+                                <div class="bmd-field-group">
+                                    <input type="text" class="bmd-input" placeholder="Obligado a llevar Contabilidad" ng-model="obligado_contabilidad" disabled>
+                                    <span class="bmd-bar"></span>
+                                    <label class="bmd-label">Obligado a llevar Contabilidad</label>
+                                    <span class="bmd-field-feedback"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group has-primary">
+                            <label for="inputEmail" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-success">arrow_forward</i></label>
+                            <div class="col-lg-9">
+                                <div class="bmd-field-group">
+                                    <input type="text" class="bmd-input" placeholder="Actividad Económica Principal" ng-model="actividad_principal" disabled>
+                                    <span class="bmd-bar"></span>
+                                    <label class="bmd-label">Actividad Económica Principal</label>
+                                    <span class="bmd-field-feedback"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-lg-5">
+                <form class="form-horizontal" name="formreg">
+                    <fieldset>
+                        <div class="form-group has-primary" ng-class="{ 'has-error' : formreg.cedula.$invalid && formreg.cedula.$touched }">
+                            <label for="inputPassword" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-primary">account_box</i></label>
+                            <div class="col-lg-9">
+                                <div class="bmd-field-group">
+                                       <input class="bmd-input" id="cedula" name="cedula" ng-model="data.cedula" ng-required="true" ui-mask="9999999999" ui-mask-placeholder="" ui-mask-placeholder-char="" placeholder="Cédula">
+                                    <span class="bmd-bar"></span>
+                                    <label class="bmd-label"></label>
+                                    <span class="bmd-field-feedback"></span>
+                                </div>
+                                <span for="correo" ng-show="formreg.cedula.$invalid && formreg.cedula.$touched">
+<span class="label label-danger">Campo Obligatorio</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-primary" ng-class="{'has-error': formreg.telefono.$invalid && formreg.telefono.$touched }">
+                            <label for="inputPassword" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-primary">contact_phone</i></label>
+                            <div class="col-lg-9">
+                                <div class="bmd-field-group">
+                                    <input type="text" class="bmd-input" name="telefono" ng-model="telefono" required="">
+                                    <span class="bmd-bar"></span>
+                                    <label class="bmd-label">Telèfono</label>
+                                    <span class="bmd-field-feedback"></span>
+                                </div>
+                                <span for="telefono" ng-show="formreg.telefono.$invalid && formreg.telefono.$touched">
+<span class="label label-danger">Campo Obligatorio</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group has-primary" ng-class="{'has-error': formreg.correo.$invalid && formreg.correo.$touched }">
+                            <label for="inputEmail" class="col-lg-2 control-label bmd-control-label"><i class="flaticon-black402 bmd-text-primary"></i></label>
+                            <div class="col-lg-9">
+                                <div class="bmd-field-group">
+                                    <input type="email" class="bmd-input" name="correo" ng-model="correo" required="" >
+                                    <span class="bmd-bar"></span>
+                                    <label class="bmd-label">Correo</label>
+                                    <span class="bmd-field-feedback"></span>
+                                </div>
+                                <span for="correo" ng-show=" formreg.correo.$invalid && formreg.correo.$touched">
+<span class="label label-danger">Correo incorrecto</span>
+                                <span class="label label-danger" ng-show="formreg.correo.$error.required">Campo Obligatorio</span>
+                                </span>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="panel-footer text-right">
+                        <button class="btn btn-primary bmd-ripple">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- position "absolute" is used for demo purpose -->
+    </div>
+
+</div>
+
+<div class="bmd-fab-speed-dial-container" style="z-index:1;position:fixed;bottom:95px;right:20px">
+    <a href="#" class="bmd-fab-speed-dialer spin btn btn-success bmd-ripple bmd-fab bmd-floating">
+        <span class="bmd-icon in flaticon-share39"></span>
+        <span class="bmd-icon out flaticon-close47"></span>
+    </a>
+    <ul class="bmd-fab-speed-dial-list left">
+        <li><a href="#" class="btn btn-primary bmd-ripple bmd-fab bmd-fab-sm bmd-floating"><span class="bmd-icon flaticon-facebook56"></span></a></li>
+        <li class="hidden">
+            <a href="#" class="btn btn-warning bmd-fab bmd-fab-sm bmd-morph-fab bmd-ripple bmd-floating" data-target="#widget6" data-closemenu="true" data-sticktarget="true">
+                <span class="bmd-icon flaticon-linkedin24"></span>
+            </a>
+        </li>
+        <li><a href="#" class="btn btn-danger bmd-ripple bmd-fab bmd-fab-sm bmd-floating"><span class="bmd-icon flaticon-google120"></span></a></li>
+    </ul>
+</div>

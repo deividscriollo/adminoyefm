@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-lg-3" style="transition: all 0.35s cubic-bezier(0.55, 0, 0.1, 1);"></div>
+    <div class="col-lg-5" style="transition: all 0.35s cubic-bezier(0.55, 0, 0.1, 1);">
+
+        <div class="panel panel-default bmd-card">
+            <div class="panel-body bmd-card-image">
+                <div class="bmd-card-image-holder">
+                    <img class="img-responsive" src="img/bnnr_sesion.png">
+                </div>
+            </div>
+            <br>
+            <form class="form-horizontal" name="formlogin">
+                <fieldset>
+                    <div class="form-group has-primary" ng-class="{ 'has-error' : formlogin.cedula.$invalid && formlogin.cedula.$touched }">
+                        <label for="inputPassword" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-primary">account_box</i></label>
+                        <div class="col-lg-9">
+                            <div class="bmd-field-group">
+                                <input class="bmd-input" id="cedula" name="cedula" ng-model="data.cedula" ng-required="true" ui-mask="9999999999001@facturanextbook.com" ui-mask-placeholder="" ui-mask-placeholder-char="" placeholder="Cédula">
+                                <span class="bmd-bar"></span>
+                                <label class="bmd-label"></label>
+                                <span class="bmd-field-feedback"></span>
+                            </div>
+                            <span for="cedula" ng-show="formlogin.cedula.$invalid && formlogin.cedula.$touched ">
+<span class="label label-danger">Campo Obligatorio</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group has-primary" ng-class="{ 'has-error' : formlogin.pass.$invalid && formlogin.pass.$touched }">
+                        <label for="inputPassword" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-primary">https</i></label>
+                        <div class="col-lg-9">
+                            <div class="bmd-field-group">
+                                <input type="password" class="bmd-input" id="pass" name="pass" ng-model="data.pass" ng-required="true">
+                                <span class="bmd-bar"></span>
+                                <label class="bmd-label">Contraseña</label>
+                                <span class="bmd-field-feedback"></span>
+                            </div>
+                            <span for="pass" ng-show="formlogin.pass.$invalid && formlogin.pass.$touched">
+<span class="label label-danger">Campo Obligatorio</span>
+                            </span>
+                        </div>
+
+                    </div>
+                </fieldset>
+                <div class="panel-footer text-right">
+                    <button type="submit" class="btn btn-primary bmd-ripple">Registrar</button>
+                </div>
+            </form>
+
+            <!-- position "absolute" is used for demo purpose -->
+        </div>
+
+        <div class="bmd-fab-speed-dial-container" style="z-index:1;position:fixed;bottom:95px;right:20px">
+            <a href="#" class="bmd-fab-speed-dialer spin btn btn-success bmd-ripple bmd-fab bmd-floating">
+                <span class="bmd-icon in flaticon-share39"></span>
+                <span class="bmd-icon out flaticon-close47"></span>
+            </a>
+            <ul class="bmd-fab-speed-dial-list left">
+                <li><a href="#" class="btn btn-primary bmd-ripple bmd-fab bmd-fab-sm bmd-floating"><span class="bmd-icon flaticon-facebook56"></span></a></li>
+                <li class="hidden">
+                    <a href="#" class="btn btn-warning bmd-fab bmd-fab-sm bmd-morph-fab bmd-ripple bmd-floating" data-target="#widget6" data-closemenu="true" data-sticktarget="true">
+                        <span class="bmd-icon flaticon-linkedin24"></span>
+                    </a>
+                </li>
+                <li><a href="#" class="btn btn-danger bmd-ripple bmd-fab bmd-fab-sm bmd-floating"><span class="bmd-icon flaticon-google120"></span></a></li>
+            </ul>
+        </div>
