@@ -1,94 +1,112 @@
 <div class="col-lg-3"></div>
-<div class=" text-center bmd-component example-box col-lg-5" >
-	<h1>+ Noticia</h1>
-<form class="form-horizontal" name="frmEmployees"> 
-    <div class="form-group has-primary" ng-class="{ 'has-error' : formlogin.titulo.$invalid && formlogin.titulo.$touched }">
-                        <label for="inputtituloword" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-primary">https</i></label>
-                        <div class="col-lg-9">
-                            <div class="bmd-field-group">
-                                <input type="text" class="bmd-input" id="titulo" name="titulo" ng-model="titulo" ng-required="true">
-                                <span class="bmd-bar"></span>
-                                <label class="bmd-label">Título</label>
-                                <span class="bmd-field-feedback"></span>
-                            </div>
-                            <span for="titulo" ng-show="formlogin.titulo.$invalid && formlogin.titulo.$touched">
+<div class="col-lg-6" >
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">+ Publicación</h3>
+  </div>
+  <div class="panel-body">
+    
+<form class="form-horizontal" name="frmadd"> 
+<div class="form-group" name="formadd">
+  <label for="categoria" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-list88"></i></label>
+      <div class="col-lg-9">
+        <div role="presentation" class="dropdown bmd-select form-control">
+          <a id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" data-model="categoira" aria-haspopup="true" role="button" aria-expanded="false">
+            <span class="bmd-selected-value" id="cat">Selecione la categoría</span>
+            <span class="caret"></span>
+          </a>
+          <ul id="categoria" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#Deportes" data-value="Deportes">Deportes</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#Deportes" data-value="Deportes">Farandula</a></li>
+          </ul>
+          <span class="bmd-bar"></span>
+        </div>
+      </div>
+    </div>
+
+ <div class="form-group ">
+      <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-add183"></i></label>
+      <div class="col-lg-9">
+        <div class="bmd-field-group">
+           <ng-wig ng-model="text1" ></ng-wig>
+          <span class="bmd-bar"></span>
+          <span class="bmd-field-feedback">
+         
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.url.$invalid && frmadd.url.$touched }">
+                            <label for="inputurl" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-primary">account_box</i></label>
+                            <div class="col-lg-9">
+                                <div class="bmd-field-group">
+                                       <input class="bmd-input" id="url" name="url" ng-model="data.url" ng-required="true" >
+                                    <span class="bmd-bar"></span>
+                                    <label class="bmd-label">URL</label>
+                                    <span class="bmd-field-feedback"></span>
+                                </div>
+                                <span for="url" ng-show="frmadd.url.$invalid && frmadd.url.$touched">
 <span class="label label-danger">Campo Obligatorio</span>
-                            </span>
-                        </div>
-<label for="inputtituloword" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-primary">https</i></label>
-                          <div class="col-lg-9">
-                            <div class="bmd-field-group">
-                                <textarea class="bmd-input" rows="4" cols="50" id="detalle" name="detalle" ng-model="detalle" ng-required="true"></textarea>
-                                <span class="bmd-bar"></span>
-                                <label class="bmd-label">Descripción</label>
-                                <span class="bmd-field-feedback"></span>
+                                </span>
                             </div>
-                            <span for="detalle" ng-show="formlogin.detalle.$invalid && formlogin.detalle.$touched">
-<span class="label label-danger">Campo Obligatorio</span>
-                            </span>
                         </div>
+<div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.referencia.$invalid && frmadd.referencia.$touched }">
+      <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-add180"></i></label>
+      <div class="col-lg-9">
+        <div class="bmd-field-group">
+          <input type="text" required="" id="reerencia" name="referencia" ng-model="referencia" class="bmd-input">
+          <span class="bmd-bar"></span>
+          <label class="bmd-label">Referencia</label>
+           <span for="correo" ng-show="frmadd.referencia.$invalid && frmadd.referencia.$touched">
+<span class="label label-danger">Campo Obligatorio</span>
+</span>
+        </div>
+      </div>
+    </div>
 
-                    </div>
+    <div class="form-group ">
+      <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-photo212"></i></label>
+      <div class="col-lg-9">
+        <div class="bmd-field-group">
+         <input type="file" name="imagenes" accept="image/*" multiple>
+          <span class="bmd-bar"></span>
+          <label class="bmd-label"></label>
+          <span class="bmd-field-feedback">
 
-</form>
-
- <!-- <form name="frmEmployees" class="form-horizontal" novalidate="">
-
-                                <div class="form-group error">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Título</label>
-                                    <div class="col-sm-9">
-                                 
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Descripción</label>
-                                    <div class="col-sm-9">
-                                    <textarea rows="4" cols="50" class="form-control" id="email" name="email" placeholder="Descripción" value="{{email}}" 
-                                        ng-model="employee.email" ng-required="true">
-</textarea>
-                                        <span class="help-inline" 
-                                        ng-show="frmEmployees.email.$invalid && frmEmployees.email.$touched">Obligatorio</span>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">URL</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="contact_number" name="contact_number" placeholder="URL" value="{{contact_number}}" 
-                                        ng-model="employee.contact_number" ng-required="true">
-                                    <span class="help-inline" 
-                                        ng-show="frmEmployees.contact_number.$invalid && frmEmployees.contact_number.$touched">Obligatorio</span>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Referencia</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="position" name="position" placeholder="Referencia" value="{{position}}" 
-                                        ng-model="employee.position" ng-required="true">
-                                    <span class="help-inline" 
-                                        ng-show="frmEmployees.position.$invalid && frmEmployees.position.$touched">Obligatorio</span>
-                                    </div>
-                                </div>
-
+          </span>
+        </div>
+      </div>
+    </div>
 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Imagen</label>
-                                    <div class="col-sm-9">
-                                        <input type="file" class="form-control" id="img" name="img" placeholder="Imagen" accept="image/x-png, image/gif, image/jpeg"
-                                        ng-model="employee.img" ng-required="true">
-                                        <span data-ng-show="frmEmployees.img.$error.required && frmEmployees.img.$touched">The Photo is required field.</span>
-                                  
-                                </div>
+      <div class="col-lg-10 col-lg-offset-9">
+        <button type="button" class="btn btn-warning bmd-ripple bmd-fab bmd-fab-sm bmd-floating" data-toggle="modal" data-target="#modal-preview"><span class="bmd-icon material-icons">remove_red_eye</span></button>
+        <button href="#" class="btn btn-primary bmd-ripple">Guardar</button>
+      </div>
+    </div>
+</form>
+  </div>
 
-                                <div class="form-group">
-                                <div class="col-sm-10"></div>
-                                    <div class="col-sm-2">
-                                      <button type="button" class="btn btn-primary" id="btn-save" ng-click="save(modalstate, id)" ng-disabled="frmEmployees.$invalid">Guardar</button>
-                                </div>
-                            </form> -->
-
-
+  <!-- Modal -->
+  <div class="modal fade" id="modal-preview" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content bmd-border-primary">
+      <div class="modal-header bmd-bg-primary">
+        <button type="button" class="close btn-link bmd-flat-btn bmd-flat-btn-light" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title bmd-text-blue-100">Vista Previa</h4>
+      </div>
+      <div class="modal-body">
+        <p>Vista previa</p>
+      </div>
+      <div class="modal-footer bmd-border-blue-100">
+        <button type="button" class="btn btn-default bmd-ripple bmd-ink-grey-400" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+      
+    </div>
+  </div>
 </div>
 
 
