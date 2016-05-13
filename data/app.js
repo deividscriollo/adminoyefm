@@ -1,7 +1,7 @@
     // create the module and name it scotchApp
     var app = angular.module('dcApp', ['ui.mask', 'ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'ngMaterial', 'ngWig']);
 
-    var API_URL = 'http://192.168.1.31/api_ex/public/api/v1/';
+    var API_URL = 'http://localhost/api_ex/public/api/v1/';
 
     app.factory('service', function($http) {
         var service = {
@@ -46,7 +46,6 @@
                 method: 'GET'
             })
         }
-
         service.guardar = function($http,datos) {
             return $http({
                 method: 'POST',

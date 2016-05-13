@@ -1,5 +1,8 @@
 var app = angular.module('dcApp').controller('NoticiasAddCtrl', function($scope){
    console.log('hola noticias add'); 
+$scope.verdatos=function(){
+    console.log($scope.data); 
+}
 
    // $('[data-toggle="tooltip"]').tooltip();
 });
