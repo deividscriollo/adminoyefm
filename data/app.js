@@ -1,7 +1,7 @@
     // create the module and name it scotchApp
-    var app = angular.module('dcApp', ['ui.mask', 'ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'ngMaterial', 'ngWig']);
+    var app = angular.module('dcApp', ['ngResource','ui.mask', 'ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'ngMaterial', 'ngWig']);
 
-    var API_URL = 'http://localhost/api_ex/public/api/v1/';
+    //var API_URL = 'http://localhost/api/public/';
 
     app.factory('service', function($http) {
         var service = {
@@ -38,24 +38,8 @@
         return service;
     });
 
-    app.factory('service', function($http) {
-        var service = {};
-        service.shownoticicas = function() {
-            return $http({
-                url: API_URL + "noticias",
-                method: 'GET'
-            })
-        }
-        service.guardar = function($http,datos) {
-            return $http({
-                method: 'POST',
-                url: API_URL + "noticias",
-                data: datos,
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-            })
-        }
+    app.factory('Noticias', function($resource) {
 
-        return service;
+return $resource("http://localhost/api/public/noticias/:id",{id:"@id"});
+
     });

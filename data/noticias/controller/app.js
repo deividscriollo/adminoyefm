@@ -1,36 +1,22 @@
-var app = angular.module('dcApp').controller('NoticiasAddCtrl', function($scope){
+var app = angular.module('dcApp').controller('NoticiasAddCtrl', function($scope,Noticias){
    console.log('hola noticias add'); 
 $scope.verdatos=function(){
-    console.log($scope.data); 
+Noticias.save($scope.data);
 }
+$scope.onFileSelect = function($file) {
+    $scope.upload = $file[0];
+};
 
    // $('[data-toggle="tooltip"]').tooltip();
 });
+
 var app = angular.module('dcApp').controller('NoticiasPreviewCtrl', function($scope){
    console.log('hola noticias Preview');
 });
-var app = angular.module('dcApp').controller('NoticiasUpdateCtrl', function($scope,service){
+var app = angular.module('dcApp').controller('NoticiasUpdateCtrl', function($scope,Noticias){
    console.log('hola noticias update');
-var t = $('#tabla-noticias').DataTable();	
-service.shownoticicas().then(function(d) {
-  for (var i = 0; i < d.data.length; i++) {
-  	t.row.add( [
-			d.data[i].id,
-            d.data[i].titulo,
-            d.data[i].URL,
-            d.data[i].referencia,
-			"<a href='#' class='btn-primary bmd-ripple btn-xs' data-toggle='modal' data-target='#modal-update' style='text-decoration: none'><span class='flaticon-create3' style='color:white'> Editar</span></a>\
-                            <a href='#' class='btn-danger bmd-ripple btn-xs' data-toggle='modal' data-target='#modal-delete' style='text-decoration: none'><span class='flaticon-rubbish' style='color:white;'> Eliminar</span></a>"
-		] ).draw( false );
-         }  
-	});
-
-      // service.shownoticicas().then(function(d) {
-
-      //     });
-
-
-
+      $scope.news=Noticias.query();
+      console.log(Noticias.query());
 });
 var app = angular.module('dcApp').controller('NoticiasEditCtrl', function($scope){
    console.log('hola noticias Edit');

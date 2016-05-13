@@ -15,6 +15,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                <tr ng-repeat="noticia in news">
+                  <td>{{noticia.id}}</td>
+                  <td>{{noticia.titulo}}</td>
+                  <td>{{noticia.URL}}</td>
+                  <td>{{noticia.referencia}}</td>
+                  <td><a href='#' class='btn-primary bmd-ripple btn-xs' data-toggle='modal' data-target='#modal-update' style='text-decoration: none'><span class='flaticon-create3' style='color:white'> Editar</span></a>
+   <a href='#' class='btn-danger bmd-ripple btn-xs' data-toggle='modal' data-target='#modal-delete' style='text-decoration: none'><span class='flaticon-rubbish' style='color:white;'> Eliminar</span></a></td>
+                </tr>
                </tbody>
             </table>
 
