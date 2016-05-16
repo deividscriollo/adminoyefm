@@ -14,6 +14,7 @@
         .when('/Noticias/preview',    'noticias.preview')
         .when('/Noticias/update',    'noticias.update')
         .when('/Noticias/edit',    'noticias.edit')
+        .when('/Registro',    'registro')
         .when('/Login',    'session')        
         .when('/'+'Imbabura/home',    's1.home')
         .when('/'+'Imbabura/Corporativo',    's1.corporativo')
@@ -27,9 +28,7 @@
         .when('/'+'Imbabura/Inbox',    's1.inbox')
         .when('/'+'Imbabura/LosHP',    's1.hp')
         .when('/'+'Imbabura/CodigoDeontologico',    's1.codigo')
-        .when('/'+'Imbabura/TarifasAsesor/:id',    's1.tarifasasesor')
-        
-        
+        .when('/'+'Imbabura/TarifasAsesor/:id',    's1.tarifasasesor')        
         .when('/'+'SantoDomingo',    's2')
         .when('/'+'Esmeraldas',    's3')
         .segment('noticias', {
