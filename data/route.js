@@ -9,6 +9,8 @@
 
         $routeSegmentProvider
         .when('/',    's0')
+        .when('/Programas',    'programas')
+        .when('/Programas/add',    'programas.add')
         .when('/Noticias',    'noticias')
         .when('/Noticias/add',    'noticias.add')
         .when('/Noticias/preview',    'noticias.preview')
@@ -73,6 +75,30 @@
             templateUrl: 'data/registro/view/index.html',
             // controller: 'homeCtrl'
         })
+        .segment('programas', {
+            templateUrl: 'data/programas/view/index.html',
+            // controller: 'homeCtrl'
+        })
+        .within()
+                .segment('add', {
+                    'default': true,
+                    templateUrl: 'data/programas/view/add.html',
+                    controller: 'ProgramasAddCtrl'
+                })
+                // .segment('preview', {
+                //     templateUrl: 'data/programas/view/preview.html',
+                //     controller: 'ProgramasPreviewCtrl'
+                //     // dependencies: ['id']
+                // })
+                // .segment('update', {
+                //     templateUrl: 'data/programas/view/update.html',
+                //     controller: 'ProgramasUpdateCtrl'
+                // })
+                // .segment('edit', {
+                //     templateUrl: 'data/programas/view/edit.html',
+                //     controller: 'PoticiasEditCtrl'
+                // })                               
+            .up()
         .segment('session', {
             templateUrl: 'data/session/view/index.html',
            // controller: 'formctrl'

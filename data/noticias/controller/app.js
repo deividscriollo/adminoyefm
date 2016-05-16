@@ -1,4 +1,4 @@
-var app = angular.module('dcApp').controller('NoticiasAddCtrl', function($scope,Noticias,Upload){
+var app = angular.module('dcApp').controller('NoticiasAddCtrl', function($scope,Noticias){
    console.log('hola noticias add'); 
 // $scope.verdatos=function(){
 // Noticias.save($scope.data);
