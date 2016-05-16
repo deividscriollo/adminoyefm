@@ -1,5 +1,5 @@
     // create the module and name it scotchApp
-    var app = angular.module('dcApp', ['ngResource','ui.mask', 'ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'ngMaterial', 'ngWig']);
+    var app = angular.module('dcApp', ['ngFileUpload','ngResource','ui.mask', 'ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'ngMaterial', 'ngWig']);
 
     //var API_URL = 'http://localhost/api/public/';
 
@@ -40,6 +40,6 @@
 
     app.factory('Noticias', function($resource) {
 
-return $resource("http://localhost/api/public/noticias/:id",{id:"@id"});
+return $resource("http://192.168.1.31/api-admin-oyefm/public/noticias/:id",{id:"@id"});
 
     });

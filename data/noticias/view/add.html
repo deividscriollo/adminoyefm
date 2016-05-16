@@ -5,7 +5,7 @@
         </div>
         <div class="panel-body">
 
-            <form class="form-horizontal" name="frmadd" ng-submit="verdatos()" >
+            <!-- <form class="form-horizontal" name="frmadd" ng-submit="verdatos()" >
                 <div class="form-group" ng-class="{ 'has-error' : frmadd.cmbcategoria.$dirty && frmadd.cmbcategoria.$invalid }">
                     <label for="categoria" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-list88"></i></label>
                     <div class="col-lg-9">
@@ -13,6 +13,8 @@
                             <select ng-model="data.categoria" name="cmbcategoria" class="form-control" ng-required="true">
                                 <option>Deportes</option>
                                 <option>Farandula</option>
+                                <option>Noticia</option>
+                                <option>Curiosidades</option>
                                 <option value="">Seleccione categoría</option>
                             </select>
                             <span class="bmd-bar"></span>
@@ -21,11 +23,25 @@
                     </div>
                 </div>
 
+                 <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.titulo.$invalid && frmadd.titulo.$touched }">
+                    <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-automatic2"></i></label>
+                    <div class="col-lg-9">
+                        <div class="bmd-field-group">
+                            <input type="text" required="" id="reerencia" name="titulo" ng-model="data.titulo" class="bmd-input">
+                            <span class="bmd-bar"></span>
+                            <label class="bmd-label">Tìtulo</label>
+                            <span for="correo" ng-show="frmadd.titulo.$invalid && frmadd.titulo.$touched">
+                            <span class="label label-danger">Campo Obligatorio</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group ">
                     <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-add183"></i></label>
                     <div class="col-lg-9">
                         <div class="bmd-field-group">
-                            <ng-wig ng-model="data.descripcion" ng-class="{ 'has-error' : frmadd.descripcion.$invalid && frmadd.descripcion.$touched }"></ng-wig>
+                            <ng-wig ng-model="data.contenido" ng-class="{ 'has-error' : frmadd.contenido.$invalid && frmadd.contenido.$touched }"></ng-wig>
                             <span class="bmd-bar"></span>
                             <span class="bmd-field-feedback">
           </span>
@@ -33,16 +49,16 @@
                     </div>
                 </div>
 
-                <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.url.$invalid && frmadd.url.$touched }">
-                    <label for="inputurl" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-primary">account_box</i></label>
+                <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.video.$invalid && frmadd.video.$touched }">
+                    <label for="inputvideo" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-primary">account_box</i></label>
                     <div class="col-lg-9">
                         <div class="bmd-field-group">
-                            <input class="bmd-input" id="url" name="url" ng-model="data.url" ng-required="true">
+                            <input class="bmd-input" id="video" name="video" ng-model="data.video" ng-required="true">
                             <span class="bmd-bar"></span>
                             <label class="bmd-label">URL</label>
                             <span class="bmd-field-feedback"></span>
                         </div>
-                        <span for="url" ng-show="frmadd.url.$invalid && frmadd.url.$touched">
+                        <span for="video" ng-show="frmadd.video.$invalid && frmadd.video.$touched">
 <span class="label label-danger">Campo Obligatorio</span>
                         </span>
                     </div>
@@ -65,7 +81,8 @@
                     <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-photo212"></i></label>
                     <div class="col-lg-9">
                         <div class="bmd-field-group">
-                            <input type="file" name="imagenes" ng-model="data.img" accept="image/*" multiple>
+                    <input type="file" ng-model="data.img" name="imagen" />
+                            
                             <span class="bmd-bar"></span>
                             <label class="bmd-label"></label>
                             <span class="bmd-field-feedback"></span>
@@ -78,7 +95,115 @@
                         <button href="#" class="btn btn-primary bmd-ripple">Guardar</button>
                     </div>
                 </div>
-            </form>
+            </form> -->
+
+<form name="frmadd" class="form-horizontal">
+
+<div class="form-group" ng-class="{ 'has-error' : frmadd.cmbcategoria.$invalid && frmadd.cmbcategoria.$touched }">
+                    <label for="categoria" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-list88"></i></label>
+                    <div class="col-lg-9">
+                        <div class="bmd-field-group">
+                            <select ng-model="data.categoria" name="cmbcategoria" class="form-control" ng-required="true">
+                                <option>Deportes</option>
+                                <option>Farandula</option>
+                                <option>Noticia</option>
+                                <option>Curiosidades</option>
+                                <option value="">Seleccione categoría</option>
+                            </select>
+                            <span class="bmd-bar"></span>
+                            <span ng-show="frmadd.cmbcategoria.$dirty && frmadd.cmbcategoria.$invalid"><span class="label label-danger">Seleccione la categoría</span></span>
+                        </div>
+                    </div>
+                </div>
+      <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.titulo.$invalid && frmadd.titulo.$touched }">
+                    <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-automatic2"></i></label>
+                    <div class="col-lg-9">
+                        <div class="bmd-field-group">
+                            <input type="text" required="" id="reerencia" name="titulo" ng-model="data.titulo" class="bmd-input">
+                            <span class="bmd-bar"></span>
+                            <label class="bmd-label">Tìtulo</label>
+                            <span for="correo" ng-show="frmadd.titulo.$invalid && frmadd.titulo.$touched">
+                            <span class="label label-danger">Campo Obligatorio</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-add183"></i></label>
+                    <div class="col-lg-9">
+                        <div class="bmd-field-group">
+                            <ng-wig ng-model="data.contenido" ng-class="{ 'has-error' : frmadd.contenido.$invalid && frmadd.contenido.$touched }"></ng-wig>
+                            <span class="bmd-bar"></span>
+                            <span class="bmd-field-feedback">
+          </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.video.$invalid && frmadd.video.$touched }">
+                    <label for="inputvideo" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-primary">account_box</i></label>
+                    <div class="col-lg-9">
+                        <div class="bmd-field-group">
+                            <input class="bmd-input" id="video" name="video" ng-model="data.video" ng-required="true">
+                            <span class="bmd-bar"></span>
+                            <label class="bmd-label">URL</label>
+                            <span class="bmd-field-feedback"></span>
+                        </div>
+                        <span for="video" ng-show="frmadd.video.$invalid && frmadd.video.$touched">
+<span class="label label-danger">Campo Obligatorio</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.referencia.$invalid && frmadd.referencia.$touched }">
+                    <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-add180"></i></label>
+                    <div class="col-lg-9">
+                        <div class="bmd-field-group">
+                            <input type="text" required="" id="reerencia" name="referencia" ng-model="data.referencia" class="bmd-input">
+                            <span class="bmd-bar"></span>
+                            <label class="bmd-label">Referencia</label>
+                            <span for="correo" ng-show="frmadd.referencia.$invalid && frmadd.referencia.$touched">
+                            <span class="label label-danger">Campo Obligatorio</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+<div class="form-group " ng-class="{ 'has-error' : frmadd.img.$invalid && frmadd.img.$touched }">
+                    <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-photo212"></i></label>
+                    <div class="col-lg-9">
+                        <div class="bmd-field-group">
+                   <input type="file" ngf-select ng-model="img" name="file" accept="image/*" ngf-max-size="2MB" required
+             ngf-model-invalid="errorFile">
+                 <fieldset>
+      <i ng-show="frmadd.userName.$error.required">*required</i>
+      <i class="label label-danger" ng-show="frmadd.file.$error.required">Campo Obligatorio</i><br>
+      <i class="label label-danger" ng-show="frmadd.file.$error.maxSize">Tamaño no permitido
+          {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+      <!-- <img ng-show="frmadd.file.$valid" ngf-thumbnail="img" class="thumb" > <button ng-click="img = null" ng-show="img">Quitar</button> -->
+      <span class="progress" ng-show="img.progress >= 0">
+        <div style="width:{{img.progress}}%" 
+            ng-bind="img.progress + '%'"></div>
+      </span>
+      <span ng-show="img.result">Upload Successful</span>
+      <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+    </fieldset>
+                            
+                            <span class="bmd-bar"></span>
+                            <label class="bmd-label"></label>
+                            <span class="bmd-field-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-9">
+                        <button type="button" class="btn btn-warning bmd-ripple bmd-fab bmd-fab-sm bmd-floating" data-toggle="modal" data-target="#modal-preview"><span class="bmd-icon material-icons">remove_red_eye</span></button>
+<button class="btn btn-primary bmd-ripple" ng-disabled="!frmadd.$valid" ng-click="uploadPic(picFile)">Guardar</button>
+                    </div>
+                </div>
+  </form>
+
         </div>
 
         <!-- Modal -->

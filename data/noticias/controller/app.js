@@ -1,11 +1,16 @@
-var app = angular.module('dcApp').controller('NoticiasAddCtrl', function($scope,Noticias){
+var app = angular.module('dcApp').controller('NoticiasAddCtrl', function($scope,Noticias,Upload){
    console.log('hola noticias add'); 
-$scope.verdatos=function(){
-Noticias.save($scope.data);
-}
-$scope.onFileSelect = function($file) {
-    $scope.upload = $file[0];
-};
+// $scope.verdatos=function(){
+// Noticias.save($scope.data);
+// }
+
+ $scope.uploadPic = function(file) {
+    console.log(file);
+    // file.upload = Upload.upload({
+    //   url: 'http://192.168.1.31/api-admin-oyefm/public/noticias',
+    //   data: {username: $scope.data, file: file},
+    // });
+    }
 
    // $('[data-toggle="tooltip"]').tooltip();
 });
