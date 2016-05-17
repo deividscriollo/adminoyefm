@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var app = angular.module('dcApp').controller('NoticiasAddCtrl', function($scope,Noticias,Upload, $resource, $timeout){
     
 
@@ -39,6 +40,16 @@ var app = angular.module('dcApp').controller('NoticiasAddCtrl', function($scope,
 
  // $scope.uploadPic = function(file) {
     // console.log(file);
+=======
+var app = angular.module('dcApp').controller('NoticiasAddCtrl', function($scope,Noticias){
+   console.log('hola noticias add'); 
+// $scope.verdatos=function(){
+// Noticias.save($scope.data);
+// }
+
+ $scope.uploadPic = function(file) {
+    console.log(file);
+>>>>>>> origin/master
     // file.upload = Upload.upload({
     //   url: 'http://192.168.1.31/api-admin-oyefm/public/noticias',
     //   data: {username: $scope.data, file: file},

@@ -48,5 +48,17 @@
     });
 
     app.factory('Noticias', function($resource) {
+<<<<<<< HEAD
         return $resource("http://192.168.1.31/api-admin-oyefm/public/noticias/:id",{id:"@id"});
+=======
+
+return $resource("http://192.168.1.31/api-admin-oyefm/public/noticias/:id",{id:"@id"});
+
+    });
+
+    app.factory('Programas', function($resource) {
+
+return $resource("http://192.168.1.31/api-admin-oyefm/public/programas/:id",{id:"@id"});
+
+>>>>>>> origin/master
     });
