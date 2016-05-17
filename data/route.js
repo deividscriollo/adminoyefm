@@ -11,11 +11,13 @@
         .when('/',    's0')
         .when('/Programas',    'programas')
         .when('/Programas/add',    'programas.add')
+
         .when('/Noticias',    'noticias')
         .when('/Noticias/add',    'noticias.add')
         .when('/Noticias/preview',    'noticias.preview')
         .when('/Noticias/update',    'noticias.update')
         .when('/Noticias/edit',    'noticias.edit')
+        
         .when('/Registro',    'registro')
         .when('/Login',    'session')        
         .when('/'+'Imbabura/home',    's1.home')
