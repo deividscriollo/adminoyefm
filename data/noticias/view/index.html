@@ -1,34 +1,34 @@
-<!-- <div class="bmd-component example-box">
-  <ul class="nav nav-pills bmd-nav-pills-primary">
-    <li  ng-class="{active: ('noticias.add' | routeSegmentStartsWith)}">
-      <a href="#/Noticias/add" class="bmd-ripple">Publicar</a>
-    </li>
-    <li ng-class="{active: ('noticias.preview' | routeSegmentStartsWith)}">
-      <a href="#/Noticias/preview">Vista Previa</a>
-    </li>
-    <li ng-class="{active: ('noticias.update' | routeSegmentStartsWith)}">
-      <a href="#/Noticias/update">Modificar/Eliminar</a>
-    </li>
-    <li ng-class="{active: ('noticias.edit' | routeSegmentStartsWith)}">
-      <a href="#/Noticias/edit">Otro</a>
-    </li>
-  </ul>
-  <br>
-
-</div> -->
-<div app-view-segment="1">
-</div>
-
-<div class="bmd-fab-speed-dial-container" style="z-index:1;position:fixed;bottom:95px;right:20px">
-    <a href="#" class="bmd-fab-speed-dialer spin btn btn-success bmd-ripple bmd-fab bmd-floating ">
-        <span class="bmd-icon in flaticon-add186"></span>
-        <span class="bmd-icon out flaticon-close47"></span>
-    </a>
-    <ul class="bmd-fab-speed-dial-list up">
-
-        <li><a href="#/Noticias/add" class="btn btn-primary bmd-ripple bmd-fab bmd-floating"><span class="bmd-icon material-icons">add_box</span></a></li>
-        <li><a href="#/Noticias/update" class="btn btn-primary bmd-ripple bmd-fab bmd-floating"><span class="bmd-icon material-icons">edit</span></a></li>
-        <li><a href="#/Noticias/edit" class="btn btn-primary bmd-ripple bmd-fab bmd-floating"><span class="bmd-icon material-icons">radio_button_unchecked</span></a></li>
-    </ul>
-
+<div class="panel panel-default bmd-card">
+  <div class="panel-body bmd-card-image">
+    <div class="bmd-card-image-holder">
+      <img class="img-responsive" src="assets/img/bannernoticias.png">
+      <div class="bmd-fab-speed-dial-container">
+        <a href="#" class="bmd-fab-speed-dialer spin btn btn-primary bmd-ripple bmd-fab bmd-floating">
+            <span class="bmd-icon in flaticon-add186"></span>
+            <span class="bmd-icon out flaticon-close47"></span>
+        </a>
+        <ul class="bmd-fab-speed-dial-list down">
+            <li>
+              <a href="#/Noticias/add" class="btn btn-info bmd-ripple bmd-fab bmd-floating" data-original-title="Nuevo" data-toggle="tooltip" data-placement="left">
+                <i class="bmd-icon material-icons">create</i>
+              </a>
+            </li>
+            <li>
+              <a href="#/Noticias/update" class="btn btn-danger bmd-ripple bmd-fab bmd-floating" data-original-title="Buscar" data-toggle="tooltip" data-placement="left">
+                <i class="bmd-icon material-icons">search</i>
+              </a>
+            </li>
+        </ul>
+    </div>
+    </div>
+    </div>
+    <figcaption class="bmd-card-caption text-left">
+      <div app-view-segment="1">
+      </div>
+    </figcaption>
+  </div>
+  <div class="panel-footer">
+    <a href="#/Noticias/add" class="bmd-card-action bmd-link-primary">Nuevo</a>
+    <a href="#/Noticias/update" class="bmd-card-action bmd-link-primary">Buscar</a>
+  </div>
 </div>
