@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <h3 class="panel-title">+ Programa</h3>
         </div>
-        <form class="form-horizontal " name="frmadd" ng-submit="guardarprograma()" enctype="multipart/form-data">
+<form class="form-horizontal " name="frmadd" ng-submit="guardarprograma()" enctype="multipart/form-data">
             <br>
 <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.nombre.$invalid && frmadd.nombre.$touched }">
                 <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-automatic2"></i></label>
@@ -23,10 +23,12 @@
                 <div class="col-lg-9">
                     <label class="label label-success">Logo</label>
                     <div class="bmd-field-group">
-                        <input type="file" file-model="data.myFile"/>
-                        <input type="hidden" ng-model="data.logo" name="imagen" />
-                        <span class="bmd-bar"></span>
-                        <span class="bmd-field-feedback"></span>
+      <input type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" required
+             ngf-model-invalid="errorFile">
+      <i ng-show="frmadd.file.$error.required" class="label label-danger">Campo Obligatorio</i><br>
+      <i ng-show="frmadd.file.$error.maxSize" class="label label-danger">Limite excedido 
+          {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+      <img ng-show="frmadd.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Elminar</button>
                     </div>
                 </div>
             </div>
@@ -177,7 +179,8 @@
             </div>
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-9">
-                    <button href="#" class="btn btn-primary bmd-ripple" >Guardar</button>
+                      <button class="btn btn-primary bmd-ripple" ng-click="uploadPic(picFile)">Guardar</button>
+<!--                     <button href="#" class="btn btn-primary bmd-ripple" >Guardar</button> -->
                     <!-- ng-disabled="!frmadd.$valid" -->
                 </div>
             </div>
@@ -229,6 +232,8 @@
       </div>
     </div>
 </form>
+
+
                 </div>
                 <div class="modal-footer bmd-border-blue-100">
                     <button type="button" class="btn btn-default bmd-ripple bmd-ink-grey-400" data-dismiss="modal">Cancelar</button>
