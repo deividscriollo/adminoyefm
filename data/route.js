@@ -18,6 +18,9 @@
         .when('/Noticias/update',    'noticias.update')
         .when('/Noticias/edit',    'noticias.edit')
         
+        .when('/Galeria',    'galeria')
+        .when('/Galeria/add',    'galeria.add')
+
         .when('/Registro',    'registro')
         .when('/Login',    'session')        
         .when('/'+'Imbabura/home',    's1.home')
@@ -101,6 +104,18 @@
                 //     controller: 'PoticiasEditCtrl'
                 // })                               
             .up()
+            .segment('galeria', {
+            templateUrl: 'data/galeria/view/index.html',
+            // controller: 'homeCtrl'
+        })
+        .within()
+                .segment('add', {
+                    'default': true,
+                    templateUrl: 'data/galeria/view/add.html',
+                    controller: 'galeriaAddCtrl'
+                })                        
+            .up()
+
         .segment('session', {
             templateUrl: 'data/session/view/index.html',
            // controller: 'formctrl'

@@ -1,5 +1,7 @@
     // create the module and name it scotchApp
-    var app = angular.module('dcApp', [ 'ngFileUpload',
+    var app = angular.module('dcApp', [ 'ngSanitize',
+                                        'videosharing-embed',
+                                        'ngFileUpload',
                                         'ngResource',
                                         'ui.mask',
                                         'ngRoute', 
@@ -52,5 +54,6 @@
     });
 
     app.factory('Programas', function($resource) {
-        return $resource("http://192.168.1.31/api-admin-oyefm/public/programas/:id",{id:"@id"});
+        //return $resource("http://192.168.1.31/api-admin-oyefm/public/programas/:id",{id:"@id"});
+        return $resource("http://localhost/api-admin-oyefm/public/programas/:id",{id:"@id"});
     });

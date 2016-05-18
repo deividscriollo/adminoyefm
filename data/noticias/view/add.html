@@ -72,46 +72,30 @@
                 </div>
             </div>
 
-            <div class="form-group " ng-class="{ 'has-error' : frmadd.img.$invalid && frmadd.img.$touched }">
-                <label for="textarea" class="col-lg-2 control-label ">
-                    <i class="material-icons bmd-text-primary flaticon-photo212"></i>
-                </label>
+            <div class="form-group has-primary">
+                <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-photo212"></i></label>
                 <div class="col-lg-9">
+                    <label class="label label-success">Logo</label>
                     <div class="bmd-field-group">
-                        <input type="file" ngf-select ng-model="img" name="file" accept="image/*" ngf-max-size="2MB" required ngf-model-invalid="errorFile">
-                        <fieldset>
-                            <i ng-show="frmadd.userName.$error.required">*required</i>
-                            <i class="label label-danger" ng-show="frmadd.file.$error.required">Campo Obligatorio</i>
-                            <br>
-                            <i class="label label-danger" ng-show="frmadd.file.$error.maxSize">Tamaño no permitido
-                                  {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
-                            <!-- <img ng-show="frmadd.file.$valid" ngf-thumbnail="img" class="thumb" > <button ng-click="img = null" ng-show="img">Quitar</button> -->
-                            <span class="progress" ng-show="img.progress >= 0">
-                                <div style="width:{{img.progress}}%" 
-                                    ng-bind="img.progress + '%'"></div>
-                              </span>
-                            <span ng-show="img.result">Upload Successful</span>
-                            <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
-                        </fieldset>
-
-                        <span class="bmd-bar"></span>
-                        <label class="bmd-label"></label>
-                        <span class="bmd-field-feedback"></span>
+                        <input type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" required ngf-model-invalid="errorFile" multiple>
+                        <i ng-show="frmadd.file.$error.required" class="label label-danger">Campo Obligatorio</i>
+                        <br>
+                        <i ng-show="frmadd.file.$error.maxSize" class="label label-danger">Limite excedido 
+          {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+                        <!-- <img ng-show="frmadd.file.$valid" ngf-thumbnail="picFile" class="thumb" style="width: 142px;"> <a href="#" class="btn btn-danger bmd-ripple btn-xs" ng-click="picFile = null" ng-show="picFile" style="color:white;">X</a> -->
                     </div>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-9">
-                    <button type="button" class="btn btn-warning bmd-ripple bmd-fab bmd-fab-sm bmd-floating" data-toggle="modal" data-target="#modal-preview"><span class="bmd-icon material-icons">remove_red_eye</span></button>
+                    <button type="button" class="btn btn-warning bmd-ripple bmd-fab bmd-fab-sm bmd-floating" data-toggle="modal" data-target="#modal-preview" ng-click="preview()"><span class="bmd-icon material-icons">remove_red_eye</span></button>
                     <button class="btn btn-primary bmd-ripple" ng-disabled="!frmadd.$valid" ng-click="uploadPic(picFile)">Guardar</button>
                 </div>
             </div>
         </div>
     </div>
-</form>
-<!-- Modal -->
-<div class="modal fade" id="modal-preview" role="dialog">
+    <div class="modal fade" id="modal-preview" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content bmd-border-primary">
@@ -120,7 +104,14 @@
                 <h4 class="modal-title bmd-text-blue-100">Vista Previa</h4>
             </div>
             <div class="modal-body">
-                <p>Vista previa</p>
+            <h1>{{data.titulo}}</h1>
+            <img src="{{data.picFile}}" >
+            <div class="player">
+            <embed-video width=550 height=300 iframe-id="youtube1" enablejsapi="1" origin="http://erost.net"
+                ng-href="{{data.video}}"><a href="//www.youtube.com/watch?v=wtLJPvx7-ys">Watch</a></embed-video>
+            </div>
+            <h4>{{data.contenido}}</h4>
+            <h5>{{data.referencia}}</h5>
             </div>
             <div class="modal-footer bmd-border-blue-100">
                 <button type="submit" class="btn btn-default bmd-ripple bmd-ink-grey-400" data-dismiss="modal">Cerrar</button>
@@ -129,3 +120,5 @@
 
     </div>
 </div>
+</form>
+<!-- Modal -->
