@@ -1,0 +1,68 @@
+<div class="col-lg-6 col-lg-offset-3">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">+ Programa</h3>
+        </div>
+        <form class="form-horizontal " name="frmadd" ng-submit="addcliente(picFile)" enctype="multipart/form-data">
+            <br>
+            <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.nombre.$invalid && frmadd.nombre.$touched }">
+                <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-automatic2"></i></label>
+                <div class="col-lg-9">
+                    <div class="bmd-field-group">
+                        <input type="text" required="" id="reerencia" name="nombre" ng-model="data.nombre" class="bmd-input">
+                        <span class="bmd-bar"></span>
+                        <label class="bmd-label">Nombre del cliente</label>
+                        <span for="correo" ng-show="frmadd.nombre.$invalid && frmadd.nombre.$touched">
+                            <span class="label label-danger">Campo Obligatorio</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group has-primary">
+                <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-photo212"></i></label>
+                <div class="col-lg-9">
+                    <label class="label label-success">Logo</label>
+                    <div class="bmd-field-group">
+                        <input type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" required ngf-model-invalid="errorFile">
+                        <i ng-show="frmadd.file.$error.required" class="label label-danger">Campo Obligatorio</i>
+                        <br>
+                        <i ng-show="frmadd.file.$error.maxSize" class="label label-danger">Limite excedido 
+          {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+                        <img ng-show="frmadd.file.$valid" ngf-thumbnail="picFile" class="thumb" style="width: 142px;"> <a href="#" class="btn btn-danger bmd-ripple btn-xs" ng-click="picFile = null" ng-show="picFile" style="color:white;">X</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.titulo.$invalid && frmadd.titulo.$touched }">
+                <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-automatic2"></i></label>
+                <div class="col-lg-9">
+                    <div class="bmd-field-group">
+                        <input type="text" required="" id="reerencia" name="titulo" ng-model="data.titulo" class="bmd-input">
+                        <span class="bmd-bar"></span>
+                        <label class="bmd-label">Título</label>
+                        <span for="correo" ng-show="frmadd.titulo.$invalid && frmadd.titulo.$touched">
+                            <span class="label label-danger">Campo Obligatorio</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-add183"></i></label>
+                <div class="col-lg-9">
+                    <div class="bmd-field-group">
+                        <ng-wig ng-model="data.descripcion" ng-class="{ 'has-error' : frmadd.descripcion.$invalid && frmadd.descripcion.$touched }"></ng-wig>
+                        <span class="bmd-bar"></span>
+                        <span class="bmd-field-feedback"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-9">
+                    <button type="submit" class="btn btn-primary bmd-ripple" ng-disabled="!frmadd.$valid">Guardar</button>
+                    <!--                     <button href="#" class="btn btn-primary bmd-ripple" >Guardar</button> -->
+                    <!-- ng-disabled="!frmadd.$valid" -->
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

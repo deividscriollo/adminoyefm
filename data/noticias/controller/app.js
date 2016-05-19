@@ -40,9 +40,33 @@ var app = angular.module('dcApp').controller('NoticiasPreviewCtrl', function($sc
    $('[data-toggle="tooltip"]').tooltip();
 });
 var app = angular.module('dcApp').controller('NoticiasUpdateCtrl', function($scope,Noticias){
-   console.log('hola noticias update');
-      $scope.news=Noticias.query();
-      console.log(Noticias.query());
+console.log('hola noticias update');
+$scope.news=[];
+$scope.deportes=[];
+$scope.farandula=[];
+$scope.curiosidades=[];
+
+Noticias.get('noticias').$promise.then(function(data){
+//console.log(data['noticias']);
+$scope.news=data['noticias'];
+$scope.deportes=data['deportes'];
+$scope.farandula=data['farandula'];
+$scope.curiosidades=data['curiosidades'];
+}, function(err){
+// failure, use err for logging etc...
+});
+
+$scope.arraydel=[];
+
+$scope.adddel=function(id,categoria){
+$scope.arraydel['obj']={id:id,categori:categoria};
+console.log($scope.arraydel);
+}
+
+$scope.delnoticia=function(){
+  Noticias.delete($scope.arraydel);
+}
+
 });
 var app = angular.module('dcApp').controller('NoticiasEditCtrl', function($scope){
    console.log('hola noticias Edit');

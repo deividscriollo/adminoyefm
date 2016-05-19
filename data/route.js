@@ -21,6 +21,12 @@
         .when('/Galeria',    'galeria')
         .when('/Galeria/add',    'galeria.add')
 
+        .when('/Slider',    'slider')
+        .when('/Slider/add',    'slider.add')
+
+        .when('/Clientes',    'clientes')
+        .when('/Clientes/add',    'clientes.add')
+
         .when('/Registro',    'registro')
         .when('/Login',    'session')        
         .when('/'+'Imbabura/home',    's1.home')
@@ -113,6 +119,28 @@
                     'default': true,
                     templateUrl: 'data/galeria/view/add.html',
                     controller: 'galeriaAddCtrl'
+                })                        
+            .up()
+        .segment('slider', {
+            templateUrl: 'data/slider/view/index.html',
+            // controller: 'homeCtrl'
+        })
+        .within()
+                .segment('add', {
+                    'default': true,
+                    templateUrl: 'data/slider/view/add.html',
+                    controller: 'sliderAddCtrl'
+                })                        
+            .up()
+              .segment('clientes', {
+            templateUrl: 'data/clientes/view/index.html',
+            // controller: 'homeCtrl'
+        })
+        .within()
+                .segment('add', {
+                    'default': true,
+                    templateUrl: 'data/clientes/view/add.html',
+                    controller: 'clientesAddCtrl'
                 })                        
             .up()
 

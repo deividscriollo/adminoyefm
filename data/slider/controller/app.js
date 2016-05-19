@@ -1,9 +1,9 @@
 var app = angular.module('dcApp');
 
-app.controller('galeriaAddCtrl', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
+app.controller('sliderAddCtrl', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
 
 $scope.imgarray=[];
-console.log('add galeria');
+console.log('add slider');
 
 $scope.addimg=function(file,descripcion,titulo){
 	$scope.imgarray.push({
@@ -25,7 +25,7 @@ $scope.imgarray.splice(index, 1);
 
 $scope.uploadgaleria=function(){
 	Upload.upload({
-      url: 'http://192.168.1.31/api-admin-oyefm/public/galeria',
+      url: 'http://192.168.1.31/api-admin-oyefm/public/slider',
       data: {archivos: $scope.imgarray},
     });
     $scope.imgarray=[];
