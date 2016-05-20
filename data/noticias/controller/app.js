@@ -15,7 +15,7 @@ console.log('add programa');
 //console.log($scope.data);
 
 file.upload = Upload.upload({
-      url: 'http://192.168.1.31/api-admin-oyefm/public/noticias',
+      url: 'http://apiadmin.nextbook.ec/public/noticias',
       data: {datos: $scope.data, file: file},
     });
     file.upload.then(function (response) {
@@ -39,13 +39,14 @@ var app = angular.module('dcApp').controller('NoticiasPreviewCtrl', function($sc
    console.log('hola noticias Preview');
    $('[data-toggle="tooltip"]').tooltip();
 });
-var app = angular.module('dcApp').controller('NoticiasUpdateCtrl', function($scope,Noticias){
+var app = angular.module('dcApp').controller('NoticiasUpdateCtrl', function($scope,Noticias,Delnews){
 console.log('hola noticias update');
 $scope.news=[];
 $scope.deportes=[];
 $scope.farandula=[];
 $scope.curiosidades=[];
 
+$scope.getnoticias=function(){
 Noticias.get('noticias').$promise.then(function(data){
 //console.log(data['noticias']);
 $scope.news=data['noticias'];
@@ -55,16 +56,23 @@ $scope.curiosidades=data['curiosidades'];
 }, function(err){
 // failure, use err for logging etc...
 });
+}
 
-$scope.arraydel=[];
+$scope.getnoticias();
+
+$scope.iddel="";
+$scope.categoriadel="";
 
 $scope.adddel=function(id,categoria){
-$scope.arraydel['obj']={id:id,categori:categoria};
-console.log($scope.arraydel);
+// $scope.arraydel['obj']={id:id,categori:categoria};
+$scope.iddel=id;
+$scope.categoriadel=categoria;
+//console.log($scope.categoriadel+"---"+$scope.iddel);
 }
 
 $scope.delnoticia=function(){
-  Noticias.delete($scope.arraydel);
+  Delnews.delete({id:$scope.iddel,categoria:$scope.categoriadel});
+  $scope.getnoticias();
 }
 
 });

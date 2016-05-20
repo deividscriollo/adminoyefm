@@ -1,0 +1,103 @@
+<div class="col-lg-6 col-lg-offset-3">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">+ Video de la semana</h3>
+        </div>
+ <form class="form-horizontal " ng-model="fromadd" name="frmadd" ng-submit="uploadPic(picFile)" enctype="multipart/form-data">
+            <br>
+            <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.titulo.$invalid && frmadd.titulo.$touched }">
+                <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-automatic2"></i></label>
+                <div class="col-lg-9">
+                    <div class="bmd-field-group">
+                        <input type="text" required="" id="reerencia" name="titulo" ng-model="data.titulo" class="bmd-input">
+                        <span class="bmd-bar"></span>
+                        <label class="bmd-label">Título</label>
+                        <span for="correo" ng-show="frmadd.titulo.$invalid && frmadd.titulo.$touched">
+                            <span class="label label-danger">Campo Obligatorio</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.genero.$invalid && frmadd.genero.$touched }">
+                <label for="textarea" class="col-lg-2 control-label "><i class="bmd-icon material-icons bmd-text-primary">format_list_bulleted</i></label>
+                <div class="col-lg-9">
+                    <div class="bmd-field-group">
+                        <input type="text" required="" id="reerencia" name="genero" ng-model="data.genero" class="bmd-input">
+                        <span class="bmd-bar"></span>
+                        <label class="bmd-label">Genero</label>
+                        <span for="correo" ng-show="frmadd.genero.$invalid && frmadd.genero.$touched">
+                            <span class="label label-danger">Campo Obligatorio</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.artista.$invalid && frmadd.artista.$touched }">
+                <label for="textarea" class="col-lg-2 control-label "><i class="bmd-icon material-icons bmd-text-primary">person_pin</i></label>
+                <div class="col-lg-9">
+                    <div class="bmd-field-group">
+                        <input type="text" required="" id="reerencia" name="artista" ng-model="data.artista" class="bmd-input">
+                        <span class="bmd-bar"></span>
+                        <label class="bmd-label">Artista</label>
+                        <span for="correo" ng-show="frmadd.artista.$invalid && frmadd.artista.$touched">
+                            <span class="label label-danger">Campo Obligatorio</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.cancion.$invalid && frmadd.cancion.$touched }">
+                <label for="textarea" class="col-lg-2 control-label "><i class="bmd-icon material-icons bmd-text-primary">library_music</i></label>
+                <div class="col-lg-9">
+                    <div class="bmd-field-group">
+                        <input type="text" required="" id="reerencia" name="cancion" ng-model="data.cancion" class="bmd-input">
+                        <span class="bmd-bar"></span>
+                        <label class="bmd-label">Canción</label>
+                        <span for="correo" ng-show="frmadd.cancion.$invalid && frmadd.cancion.$touched">
+                            <span class="label label-danger">Campo Obligatorio</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.url.$invalid && frmadd.url.$touched }">
+                <label for="textarea" class="col-lg-2 control-label "><i class="bmd-icon material-icons bmd-text-primary">ondemand_video</i></label>
+                <div class="col-lg-9">
+                    <div class="bmd-field-group">
+                        <input type="text" required="" id="reerencia" name="url" ng-model="data.url" class="bmd-input">
+                        <span class="bmd-bar"></span>
+                        <label class="bmd-label">URL del video</label>
+                        <span for="correo" ng-show="frmadd.url.$invalid && frmadd.url.$touched">
+                            <span class="label label-danger">Campo Obligatorio</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.otros.$invalid && frmadd.otros.$touched }">
+                <label for="textarea" class="col-lg-2 control-label "><i class="bmd-icon material-icons bmd-text-primary">assignment</i></label>
+                <div class="col-lg-9">
+                    <div class="bmd-field-group">
+                        <input type="text" id="reerencia" name="otros" ng-model="data.otros" class="bmd-input">
+                        <span class="bmd-bar"></span>
+                        <label class="bmd-label">Otros</label>
+<!--                         <span for="correo" ng-show="frmadd.otros.$invalid && frmadd.otros.$touched">
+                            <span class="label label-danger">Campo Obligatorio</span>
+                        </span> -->
+                    </div>
+                </div>
+            </div>
+
+      <!--       <div class="form-group " ng-class="{ 'has-error' : frmadd.descripcion.$invalid && frmadd.descripcion.$touched }">
+                <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-add183"></i></label>
+                <div class="col-lg-9">
+                    <div class="bmd-field-group">
+                        <ng-wig ng-model="descripcion" ></ng-wig>
+                        <span class="bmd-bar"></span>
+                        <span class="bmd-field-feedback"></span>
+                    </div>
+                </div>
+            </div> -->
+                <div class="modal-footer bmd-border-blue-100">
+                    <button type="submit" class="btn btn-primary bmd-ripple" ng-click="guardarvideosemanal()" ng-disabled="!frmadd.$valid">Guardar</button>
+                </div>
+        </form>
+
+    </div>
+    

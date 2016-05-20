@@ -11,6 +11,7 @@
         .when('/',    's0')
         .when('/Programas',    'programas')
         .when('/Programas/add',    'programas.add')
+        .when('/Programas/update',    'programas.update')
 
         .when('/Noticias',    'noticias')
         .when('/Noticias/add',    'noticias.add')
@@ -26,6 +27,9 @@
 
         .when('/Clientes',    'clientes')
         .when('/Clientes/add',    'clientes.add')
+
+        .when('/Video-semanal',    'video_semanal')
+        .when('/Video-semanal/add',    'video_semanal.add')
 
         .when('/Registro',    'registro')
         .when('/Login',    'session')        
@@ -101,10 +105,10 @@
                 //     controller: 'ProgramasPreviewCtrl'
                 //     // dependencies: ['id']
                 // })
-                // .segment('update', {
-                //     templateUrl: 'data/programas/view/update.html',
-                //     controller: 'ProgramasUpdateCtrl'
-                // })
+                .segment('update', {
+                    templateUrl: 'data/programas/view/update.html',
+                    controller: 'ProgramasUpdateCtrl'
+                })
                 // .segment('edit', {
                 //     templateUrl: 'data/programas/view/edit.html',
                 //     controller: 'PoticiasEditCtrl'
@@ -121,6 +125,19 @@
                     controller: 'galeriaAddCtrl'
                 })                        
             .up()
+
+              .segment('video_semanal', {
+            templateUrl: 'data/video-semanal/view/index.html',
+            // controller: 'homeCtrl'
+        })
+        .within()
+                .segment('add', {
+                    'default': true,
+                    templateUrl: 'data/video-semanal/view/add.html',
+                    controller: 'videosemanalAddCtrl'
+                })                        
+            .up()
+
         .segment('slider', {
             templateUrl: 'data/slider/view/index.html',
             // controller: 'homeCtrl'

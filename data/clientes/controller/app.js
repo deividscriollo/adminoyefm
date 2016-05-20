@@ -7,7 +7,7 @@ console.log('add cliente');
 $scope.addcliente = function(file) {
 
 file.upload = Upload.upload({
-      url: 'http://192.168.1.31/api-admin-oyefm/public/clientes',
+      url: 'http://apiadmin.nextbook.ec/public/clientes',
       data: {datos: $scope.data, file: file},
     });
     file.upload.then(function (response) {

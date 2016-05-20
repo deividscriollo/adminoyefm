@@ -50,10 +50,21 @@
     });
 
     app.factory('Noticias', function($resource) {
-        return $resource("http://192.168.1.31/api-admin-oyefm/public/noticias/:id",{id:"@id"});
+
+var Noticias= $resource("http://apiadmin.nextbook.ec/public/noticias/:id",{id:"@id"});
+        return Noticias;
     });
 
     app.factory('Programas', function($resource) {
-        //return $resource("http://192.168.1.31/api-admin-oyefm/public/programas/:id",{id:"@id"});
-        return $resource("http://localhost/api-admin-oyefm/public/programas/:id",{id:"@id"});
+        //return $resource("http://apiadmin.nextbook.ec/public/programas/:id",{id:"@id"});
+        return $resource("http://apiadmin.nextbook.ec/public/programas/:id",{id:"@id"});
     });
+
+    app.factory('Videosemanal', function($resource) {
+        //return $resource("http://apiadmin.nextbook.ec/public/programas/:id",{id:"@id"});
+        return $resource("http://apiadmin.nextbook.ec/public/videosemanal/:id",{id:"@id"});
+    });
+
+     app.factory('Delnews', ['$resource', function ($resource) {
+        return $resource('http://apiadmin.nextbook.ec/public/delnoticia/:id/:categoria', {id: '@id',categoria: '@categoria'});
+}]);

@@ -3,7 +3,7 @@ var app = angular.module('dcApp');
 app.controller('ProgramasAddCtrl', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
 
 console.log('add programa');
-$scope.semana = [{name:'Lunes'},{name:'Martes'},{name:'Miercoles'},{name:'Jueves'},{name:'Viernes'},{name:'Sábado'},{name:'Domingo'}];
+$scope.semana = [{name:'Lunes  '},{name:'Martes'},{name:'Miercoles'},{name:'Jueves'},{name:'Viernes'},{name:'Sábado'},{name:'Domingo'}];
  $scope.folder = {};
 $scope.locutoresarray = [];
 $('#hfin').bootstrapMaterialDatePicker({ time: true, date: false, format: 'hh:mm A', stateColor: 'info' });
@@ -23,7 +23,7 @@ $('#hinicio').bootstrapMaterialDatePicker({ time: true, date: false, format: 'hh
 
 
 file.upload = Upload.upload({
-      url: 'http://192.168.1.31/api-admin-oyefm/public/programas',
+      url: 'http://apiadmin.nextbook.ec/public/programas',
       data: {datos: $scope.data, file: file},
     });
 
@@ -46,3 +46,18 @@ $scope.locutor="";
 //console.log($scope.locutoresarray);
     }
 }]);
+
+app.controller('ProgramasUpdateCtrl', function($scope,Programas){
+   console.log('hola programa update');
+   $scope.programas=[];
+   $scope.getprogramas=function(){
+Programas.get('programas').$promise.then(function(data){
+$scope.programas=data['programas'];
+}, function(err){
+// failure, use err for logging etc...
+});
+}
+$scope.getprogramas();
+
+
+});

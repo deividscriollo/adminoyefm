@@ -1,10 +1,11 @@
-<div class="col-lg-6 col-lg-offset-3">
+<div class="col-lg-12 animated fadeInRight">
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">+ Programa</h3>
         </div>
         <form class="form-horizontal " name="frmadd" ng-submit="uploadPic(picFile)" enctype="multipart/form-data">
             <br>
+            <div class="col-lg-6">
             <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.nombre.$invalid && frmadd.nombre.$touched }">
                 <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-automatic2"></i></label>
                 <div class="col-lg-9">
@@ -112,30 +113,36 @@
             </div>
             <div class="form-group" ng-class="{ 'has-error' : frmadd.cmbcategoria.$invalid && frmadd.cmbcategoria.$touched }">
                 <label for="categoria" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-clapperboard4"></i></label>
-                <div class="col-lg-5">
+                <div class="col-lg-9">
                     <div class="bmd-field-group">
                         <div class="checkbox bmd-checkbox bmd-checkbox-primary">
                             <label ng-repeat="dia in semana">
-                                <input type="checkbox" class="bmd-ripple" ng-model="folder[dia.name]" value={{album.name}} placeholder="HH:mm:ss">
-                                <span class="check"></span>{{dia.name}}
+                            <input type="checkbox" class="bmd-ripple" ng-model="folder[dia.name]" value={{album.name}} placeholder="HH:mm:ss">
+                                <span class="check"></span>{{dia.name}}&nbsp;
                             </label>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-lg-5">
-                    <div class="bmd-field-group"> </div>
-                </div>
-
-                <div class="bmd-field-group">
-                    <div class="col-lg-2">
+<div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.horario.$invalid && frmadd.horario.$touched }">
+                <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-timelapse"></i></label>
+                <div class="col-lg-9">
+                    <div class="bmd-field-group">
+                        <div class="col-lg-2">
                         <input id="hinicio" type="text" class="bmd-input" placeholder="H inicio" data-dtp="dtp_D5q3F" required>
+                        <span for="correo" ng-show="frmadd.musical.$invalid && frmadd.musical.$touched">
+                            <span class="label label-danger">Campo Obligatorio</span>
+                        </span>
                     </div>
                     <div class="col-lg-2">
                         <input id="hfin" type="text" class="bmd-input" placeholder="H final" data-dtp="dtp_D5q3F" required>
                     </div>
+                    </div>
                 </div>
             </div>
+</div>
+<div class="col-lg-6">
             <div class="form-group has-primary">
                 <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-create2"></i></label>
                 <div class="col-lg-9">
@@ -174,13 +181,14 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-9">
+            <div class="col-lg-offset-10">
                     <button type="submit" class="btn btn-primary bmd-ripple" ng-disabled="!frmadd.$valid">Guardar</button>
                     <!--                     <button href="#" class="btn btn-primary bmd-ripple" >Guardar</button> -->
                     <!-- ng-disabled="!frmadd.$valid" -->
                 </div>
             </div>
+            <div class="form-group"></div>
+
         </form>
     </div>
 
