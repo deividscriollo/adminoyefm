@@ -163,7 +163,7 @@
 
         .segment('session', {
             templateUrl: 'data/session/view/index.html',
-           // controller: 'formctrl'
+            controller: 'loginController'
         })
     });
 

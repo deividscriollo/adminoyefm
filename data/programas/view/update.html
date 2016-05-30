@@ -16,10 +16,10 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="programa in programas">
-                        <td>{{programa.id}}</td>
-                        <td>{{programa.nombre}}</td>
-                        <td><img src="{{programa.logo}}" width="90px"></td>
-                        <td>{{programa.logo}}</td>
+                        <td>{{programa[0].id}}</td>
+                        <td><img src="{{programa[0].logo}}" width="90px"></td>
+                        <td>{{programa[0].nombre}}</td>
+                        <td><div ng-repeat="locutor in programa[1]">{{locutor.nombres+' '+locutor.apellidos}}</div></td>
                         <td><a href='#' class='btn-primary bmd-ripple btn-xs' data-toggle='modal' data-target='#modal-update' style='text-decoration: none'><span class='flaticon-create3' style='color:white'> Editar</span></a>
                             <a href='#' class='btn-danger bmd-ripple btn-xs' data-toggle='modal' data-target='#modal-delete' style='text-decoration: none'><span class='flaticon-rubbish' style='color:white;' ng-click="adddel(noticia.id,'Noticias')"> Eliminar</span></a></td>
                     </tr>

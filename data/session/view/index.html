@@ -9,13 +9,13 @@
                 </div>
             </div>
             <br>
-            <form class="form-horizontal" name="formlogin">
+            <form class="form-horizontal" name="formlogin" ng-submit="login()">
                 <fieldset>
                     <div class="form-group has-primary" ng-class="{ 'has-error' : formlogin.cedula.$invalid && formlogin.cedula.$touched }">
                         <label for="inputPassword" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-primary">account_box</i></label>
                         <div class="col-lg-9">
                             <div class="bmd-field-group">
-                                <input class="bmd-input" id="cedula" name="cedula" ng-model="data.cedula" ng-required="true" ui-mask="9999999999001@facturanextbook.com" ui-mask-placeholder="" ui-mask-placeholder-char="" placeholder="Cédula">
+                                <input class="bmd-input" id="cedula" name="cedula" ng-model="cedula" ng-required="true" ui-mask="9999999999001@facturanextbook.com" ui-mask-placeholder="" ui-mask-placeholder-char="" placeholder="Cédula">
                                 <span class="bmd-bar"></span>
                                 <label class="bmd-label"></label>
                                 <span class="bmd-field-feedback"></span>
@@ -29,7 +29,7 @@
                         <label for="inputPassword" class="col-lg-2 control-label bmd-control-label"><i class="material-icons bmd-text-primary">https</i></label>
                         <div class="col-lg-9">
                             <div class="bmd-field-group">
-                                <input type="password" class="bmd-input" id="pass" name="pass" ng-model="data.pass" ng-required="true">
+                                <input type="password" class="bmd-input" id="pass" name="pass" ng-model="pass" ng-required="true">
                                 <span class="bmd-bar"></span>
                                 <label class="bmd-label">Contraseña</label>
                                 <span class="bmd-field-feedback"></span>

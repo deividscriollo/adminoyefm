@@ -1,5 +1,6 @@
     // create the module and name it scotchApp
-    var app = angular.module('dcApp', [ 'ngSanitize',
+    var app = angular.module('dcApp', [ 'ngStorage',
+                                        'ngSanitize',
                                         'videosharing-embed',
                                         'ngFileUpload',
                                         'ngResource',
@@ -49,20 +50,52 @@
         return service;
     });
 
-    app.factory('Noticias', function($resource) {
+    app.factory('Noticias', function($resource,$localStorage) {
 
-var Noticias= $resource("http://apiadmin.nextbook.ec/public/noticias/:id",{id:"@id"});
-        return Noticias;
+// var Noticias= $resource("http://apiadmin.nextbook.ec/public/noticias/:id",{id:"@id"});
+//         return Noticias;
+
+return $resource('http://192.168.1.36/api-admin-oyefm/public/noticias', {}, {
+    get: {
+        method: 'GET',
+        isArray: false,
+       params: {token: $localStorage.token}
+    }
+});
+
     });
 
     app.factory('Programas', function($resource) {
         //return $resource("http://apiadmin.nextbook.ec/public/programas/:id",{id:"@id"});
-        return $resource("http://apiadmin.nextbook.ec/public/programas/:id",{id:"@id"});
+        //return $resource("http://apiadmin.nextbook.ec/public/programas/:id",{id:"@id"});
+        // return $resource("http://192.168.1.36/api-admin-oyefm/public/programas/:id",{id:"@id"});
+
+return $resource('http://apiadmin.nextbook.ec/public/programas', {}, {
+    query: {
+        method: 'GET',
+        isArray: true,
+        headers: { 'api-key': '$2y$10$k.ol6RKAs3d.YEk/0lhdzOMEagC2jcS9l13iR9GU.swsk7X6NBHIm' }
+    }
+});
+
     });
 
     app.factory('Videosemanal', function($resource) {
         //return $resource("http://apiadmin.nextbook.ec/public/programas/:id",{id:"@id"});
         return $resource("http://apiadmin.nextbook.ec/public/videosemanal/:id",{id:"@id"});
+    });
+
+    app.factory('login', function($resource) {
+        // return $resource("http://apiadmin.nextbook.ec/public/login/:id",{id:"@id"});
+return $resource('http://192.168.1.36/api-admin-oyefm/public/login', {}, {
+    ingresar: {
+        method: 'POST',
+        headers: {
+        'api-key': '$2y$10$k.ol6RKAs3d.YEk/0lhdzOMEagC2jcS9l13iR9GU.swsk7X6NBHIm' }
+    }
+});
+
+
     });
 
      app.factory('Delnews', ['$resource', function ($resource) {

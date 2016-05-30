@@ -23,7 +23,7 @@ $('#hinicio').bootstrapMaterialDatePicker({ time: true, date: false, format: 'hh
 
 
 file.upload = Upload.upload({
-      url: 'http://apiadmin.nextbook.ec/public/programas',
+      url: 'http://192.168.1.36/api-admin-oyefm/public/programas',
       data: {datos: $scope.data, file: file},
     });
 
@@ -49,12 +49,13 @@ $scope.locutor="";
 
 app.controller('ProgramasUpdateCtrl', function($scope,Programas){
    console.log('hola programa update');
-   $scope.programas=[];
-   $scope.getprogramas=function(){
-Programas.get('programas').$promise.then(function(data){
-$scope.programas=data['programas'];
+    $scope.programas=[];
+    $scope.getprogramas=function(){
+    Programas.query().$promise.then(function(data){
+    $scope.programas=data;
+     //console.log($scope.programas[1]);
 }, function(err){
-// failure, use err for logging etc...
+
 });
 }
 $scope.getprogramas();

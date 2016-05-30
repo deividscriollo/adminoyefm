@@ -6,4 +6,12 @@ app.controller('videosemanalAddCtrl', function($scope,Videosemanal){
     Videosemanal.save($scope.data);
     console.log($scope.data);
    }
+// $scope.URL="";
+Videosemanal.query(0).$promise.then(function(data){
+ $('#video').append(data[0].url);
+console.log(data[0].url);
+}, function(err){
+// failure, use err for logging etc...
+});
+
 });
