@@ -1,11 +1,11 @@
 var app = angular.module('dcApp');
 
-app.controller('ProgramasAddCtrl', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
+app.controller('top10AddCtrl', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
 
-console.log('add programa');
-$scope.semana = [{name:'Lunes'},{name:'Martes'},{name:'Miercoles'},{name:'Jueves'},{name:'Viernes'},{name:'Sábado'},{name:'Domingo'}];
+console.log('add Top10');
+// $scope.semana = [{name:'Lunes  '},{name:'Martes'},{name:'Miercoles'},{name:'Jueves'},{name:'Viernes'},{name:'Sábado'},{name:'Domingo'}];
  $scope.folder = {};
-$scope.locutoresarray = [];
+// $scope.locutoresarray = [];
 $('#hfin').bootstrapMaterialDatePicker({ time: true, date: false, format: 'hh:mm A', stateColor: 'info' });
 $('#hinicio').bootstrapMaterialDatePicker({ time: true, date: false, format: 'hh:mm A', stateColor: 'info' });
 
@@ -23,7 +23,7 @@ $('#hinicio').bootstrapMaterialDatePicker({ time: true, date: false, format: 'hh
 
 
 file.upload = Upload.upload({
-      url: 'http://apiadmin.nextbook.ec/public/programas',
+      url: 'http://192.168.1.36/api-admin-oyefm/public/programas',
       data: {datos: $scope.data, file: file},
     });
 
@@ -47,18 +47,18 @@ $scope.locutor="";
     }
 }]);
 
-app.controller('ProgramasUpdateCtrl', function($scope,Programas){
-   console.log('hola programa update');
-    $scope.programas=[];
-    $scope.getprogramas=function(){
-    Programas.query().$promise.then(function(data){
-    $scope.programas=data;
-     //console.log($scope.programas[1]);
-}, function(err){
+// app.controller('ProgramasUpdateCtrl', function($scope,Programas){
+//    console.log('hola programa update');
+//     $scope.programas=[];
+//     $scope.getprogramas=function(){
+//     Programas.query().$promise.then(function(data){
+//     $scope.programas=data;
+//      //console.log($scope.programas[1]);
+// }, function(err){
 
-});
-}
-$scope.getprogramas();
+// });
+// }
+// $scope.getprogramas();
 
 
-});
+// });

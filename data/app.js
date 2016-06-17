@@ -52,10 +52,7 @@
 
     app.factory('Noticias', function($resource,$localStorage) {
 
-// var Noticias= $resource("http://apiadmin.nextbook.ec/public/noticias/:id",{id:"@id"});
-//         return Noticias;
-
-return $resource('http://192.168.1.36/api-admin-oyefm/public/noticias', {}, {
+return $resource('http://apiadmin.nextbook.ec/public/noticias', {}, {
     get: {
         method: 'GET',
         isArray: false,
@@ -66,18 +63,13 @@ return $resource('http://192.168.1.36/api-admin-oyefm/public/noticias', {}, {
     });
 
     app.factory('Programas', function($resource) {
-        //return $resource("http://apiadmin.nextbook.ec/public/programas/:id",{id:"@id"});
-        //return $resource("http://apiadmin.nextbook.ec/public/programas/:id",{id:"@id"});
-        // return $resource("http://192.168.1.36/api-admin-oyefm/public/programas/:id",{id:"@id"});
-
 return $resource('http://apiadmin.nextbook.ec/public/programas', {}, {
     query: {
         method: 'GET',
         isArray: true,
-        headers: { 'api-key': '$2y$10$k.ol6RKAs3d.YEk/0lhdzOMEagC2jcS9l13iR9GU.swsk7X6NBHIm' }
+        params: {token: $localStorage.token}
     }
-});
-
+    });
     });
 
     app.factory('Videosemanal', function($resource) {
@@ -87,17 +79,18 @@ return $resource('http://apiadmin.nextbook.ec/public/programas', {}, {
 
     app.factory('login', function($resource) {
         // return $resource("http://apiadmin.nextbook.ec/public/login/:id",{id:"@id"});
-return $resource('http://192.168.1.36/api-admin-oyefm/public/login', {}, {
+return $resource('http://apiadmin.nextbook.ec/public/login', {}, {
     ingresar: {
         method: 'POST',
-        headers: {
-        'api-key': '$2y$10$k.ol6RKAs3d.YEk/0lhdzOMEagC2jcS9l13iR9GU.swsk7X6NBHIm' }
+        params: {token: $localStorage.token}
     }
 });
-
 
     });
 
      app.factory('Delnews', ['$resource', function ($resource) {
         return $resource('http://apiadmin.nextbook.ec/public/delnoticia/:id/:categoria', {id: '@id',categoria: '@categoria'});
-}]);
+    }]);
+
+
+     

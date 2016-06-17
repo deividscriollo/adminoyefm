@@ -9,6 +9,10 @@
 
         $routeSegmentProvider
         .when('/',    's0')
+        .when('/Top10',    'top10')
+        .when('/Top10/add',    'top10.add')
+        // .when('/Top10/update',    'top10.update')
+
         .when('/Programas',    'programas')
         .when('/Programas/add',    'programas.add')
         .when('/Programas/update',    'programas.update')
@@ -165,6 +169,28 @@
             templateUrl: 'data/session/view/index.html',
             controller: 'loginController'
         })
+
+        .segment('top10', {
+            templateUrl: 'data/top10/view/index.html',
+            // controller: 'homeCtrl'
+        })
+.within()
+                .segment('add', {
+                    'default': true,
+                    templateUrl: 'data/top10/view/add.html',
+                    controller: 'top10AddCtrl'
+                })
+                .segment('update', {
+                    templateUrl: 'data/top10/view/update.html',
+                    controller: 'top10UpdateCtrl'
+                })                            
+            .up()
+            .segment('galeria', {
+            templateUrl: 'data/galeria/view/index.html',
+            // controller: 'homeCtrl'
+        })
+
+
     });
 
     app.controller('mainController', function($scope, $rootScope){

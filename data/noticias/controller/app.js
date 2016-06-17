@@ -4,7 +4,6 @@ app.controller('NoticiasAddCtrl', ['$scope', 'Upload', '$timeout', function ($sc
 
 console.log('add programa');
 
-
     $scope.uploadPic = function(file) {
     $scope.albumNameArray = [];
        angular.forEach($scope.folder,function(key,value){
@@ -76,6 +75,6 @@ $scope.delnoticia=function(){
 }
 
 });
-var app = angular.module('dcApp').controller('NoticiasEditCtrl', function($scope){
+app.controller('NoticiasEditCtrl', function($scope){
    console.log('hola noticias Edit');
 });
