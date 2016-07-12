@@ -62,7 +62,7 @@ return $resource('http://apiadmin.nextbook.ec/public/noticias', {}, {
 
     });
 
-    app.factory('Programas', function($resource) {
+    app.factory('Programas', function($resource,$localStorage) {
 return $resource('http://apiadmin.nextbook.ec/public/programas', {}, {
     query: {
         method: 'GET',
