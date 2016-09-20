@@ -9,13 +9,9 @@ $scope.estadosave=true;
 $scope.addcancion=function(){
   if ($scope.listatop10.length<10) {
   $scope.listatop10.push({
-      // nro:$scope.nro,
-      titulo:$scope.data.titulo,
-      genero:$scope.data.genero,
       artista:$scope.data.artista,
       cancion:$scope.data.cancion,
-      url:$scope.data.url,
-      otros:$scope.data.otros
+      url:$scope.data.url
   });
   }
   if ($scope.listatop10.length==10) {
