@@ -25,7 +25,7 @@ $scope.imgarray.splice(index, 1);
 
 $scope.uploadgaleria=function(){
 	Upload.upload({
-      url: 'http://apiadmin.nextbook.ec/public/slider',
+      url: 'http://localhost/api-admin-oyefm/public/slider',
       data: {archivos: $scope.imgarray},
     });
     $scope.imgarray=[];

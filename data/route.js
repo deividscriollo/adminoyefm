@@ -174,7 +174,7 @@
             templateUrl: 'data/top10/view/index.html',
             // controller: 'homeCtrl'
         })
-.within()
+        .within()
                 .segment('add', {
                     'default': true,
                     templateUrl: 'data/top10/view/add.html',

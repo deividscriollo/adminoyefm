@@ -1,50 +1,46 @@
 var app = angular.module('dcApp');
 
-app.controller('top10AddCtrl', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
+app.controller('top10AddCtrl', ['$scope', '$location','Upload', '$timeout','servicioTop10', function ($scope,$location, Upload, $timeout,servicioTop10) {
 
 console.log('add Top10');
-// $scope.semana = [{name:'Lunes  '},{name:'Martes'},{name:'Miercoles'},{name:'Jueves'},{name:'Viernes'},{name:'Sábado'},{name:'Domingo'}];
- $scope.folder = {};
-// $scope.locutoresarray = [];
-$('#hfin').bootstrapMaterialDatePicker({ time: true, date: false, format: 'hh:mm A', stateColor: 'info' });
-$('#hinicio').bootstrapMaterialDatePicker({ time: true, date: false, format: 'hh:mm A', stateColor: 'info' });
+$scope.listatop10=[];
+$scope.estadosave=true;
 
-    $scope.uploadPic = function(file) {
-    $scope.albumNameArray = [];
-       angular.forEach($scope.folder,function(key,value){
-            if(key)
-                $scope.albumNameArray.push(value)
-        });
-
-        $scope.data["dias"]=$scope.albumNameArray.toString();
-        $scope.data["locutores"]=$scope.locutoresarray;
-        $scope.data["hinicio"]=$('#hinicio').val();
-        $scope.data["hfin"]=$('#hfin').val();
-
-
-file.upload = Upload.upload({
-      url: 'http://192.168.1.36/api-admin-oyefm/public/programas',
-      data: {datos: $scope.data, file: file},
-    });
-
-    file.upload.then(function (response) {
-      $timeout(function () {
-        file.result = response.data;
-      });
-    }, function (response) {
-      if (response.status > 0)
-        $scope.errorMsg = response.status + ': ' + response.data;
-    }, function (evt) {
-      // Math.min is to fix IE which reports 200% sometimes
-      file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
-    });
-
+$scope.addcancion=function(){
+  if ($scope.listatop10.length<10) {
+  $scope.listatop10.push({
+      // nro:$scope.nro,
+      titulo:$scope.data.titulo,
+      genero:$scope.data.genero,
+      artista:$scope.data.artista,
+      cancion:$scope.data.cancion,
+      url:$scope.data.url,
+      otros:$scope.data.otros
+  });
+  }
+  if ($scope.listatop10.length==10) {
+    $scope.estadosave=false;
+  }
 }
-$scope.addlocutor=function(){
-$scope.locutoresarray.push($scope.locutor);
-$scope.locutor="";
-//console.log($scope.locutoresarray);
+$scope.deletecancion=function(obj){
+  var index=$scope.listatop10.indexOf(obj);
+      $scope.listatop10.splice(index,1); 
+}
+
+$scope.guardartop10=function(form){
+  servicioTop10.set({top:$scope.listatop10}).$promise.then(function(d){
+    if (d.respuesta) {
+     $scope.listatop10=[];
     }
+  });
+ if (form) {
+      form.$setPristine();
+      form.$setUntouched();
+      form.$rollbackViewValue();
+    }
+    $scope.data = angular.copy($scope.master);
+}
+
 }]);
 
 // app.controller('ProgramasUpdateCtrl', function($scope,Programas){

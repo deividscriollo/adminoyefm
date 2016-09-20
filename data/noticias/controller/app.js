@@ -14,7 +14,7 @@ console.log('add programa');
 //console.log($scope.data);
 
 file.upload = Upload.upload({
-      url: 'http://apiadmin.nextbook.ec/public/noticias',
+      url: 'http://localhost/api-admin-oyefm/public/noticias',
       data: {datos: $scope.data, file: file},
     });
     file.upload.then(function (response) {

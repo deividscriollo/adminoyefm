@@ -23,7 +23,7 @@ $('#hinicio').bootstrapMaterialDatePicker({ time: true, date: false, format: 'hh
 
 
 file.upload = Upload.upload({
-      url: 'http://apiadmin.nextbook.ec/public/programas',
+      url: 'http://localhost/api-admin-oyefm/public/programas',
       data: {datos: $scope.data, file: file},
     });
 

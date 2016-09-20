@@ -52,7 +52,7 @@
 
     app.factory('Noticias', function($resource,$localStorage) {
 
-return $resource('http://apiadmin.nextbook.ec/public/noticias', {}, {
+return $resource('http://localhost/api-admin-oyefm/public/noticias', {}, {
     get: {
         method: 'GET',
         isArray: false,
@@ -63,7 +63,7 @@ return $resource('http://apiadmin.nextbook.ec/public/noticias', {}, {
     });
 
     app.factory('Programas', function($resource,$localStorage) {
-return $resource('http://apiadmin.nextbook.ec/public/programas', {}, {
+return $resource('http://localhost/api-admin-oyefm/public/programas', {}, {
     query: {
         method: 'GET',
         isArray: true,
@@ -72,14 +72,22 @@ return $resource('http://apiadmin.nextbook.ec/public/programas', {}, {
     });
     });
 
+     app.factory('servicioTop10', function($resource) {
+        return $resource('http://localhost/api-admin-oyefm/public/addTop10', {}, {
+            set: {
+                method: 'POST'
+            }
+            });
+    });
+
     app.factory('Videosemanal', function($resource) {
-        //return $resource("http://apiadmin.nextbook.ec/public/programas/:id",{id:"@id"});
-        return $resource("http://apiadmin.nextbook.ec/public/videosemanal/:id",{id:"@id"});
+        //return $resource("http://localhost/api-admin-oyefm/public/programas/:id",{id:"@id"});
+        return $resource("http://localhost/api-admin-oyefm/public/videosemanal/:id",{id:"@id"});
     });
 
     app.factory('login', function($resource) {
-        // return $resource("http://apiadmin.nextbook.ec/public/login/:id",{id:"@id"});
-return $resource('http://apiadmin.nextbook.ec/public/login', {}, {
+        // return $resource("http://localhost/api-admin-oyefm/public/login/:id",{id:"@id"});
+return $resource('http://localhost/api-admin-oyefm/public/login', {}, {
     ingresar: {
         method: 'POST',
         params: {token: $localStorage.token}
@@ -89,7 +97,7 @@ return $resource('http://apiadmin.nextbook.ec/public/login', {}, {
     });
 
      app.factory('Delnews', ['$resource', function ($resource) {
-        return $resource('http://apiadmin.nextbook.ec/public/delnoticia/:id/:categoria', {id: '@id',categoria: '@categoria'});
+        return $resource('http://localhost/api-admin-oyefm/public/delnoticia/:id/:categoria', {id: '@id',categoria: '@categoria'});
     }]);
 
 
