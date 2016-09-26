@@ -71,6 +71,22 @@
                     </div>
                 </div>
             </div>
+
+            <div class="form-group has-primary">
+                <label for="textarea" class="col-lg-2 control-label "><i class="material-icons bmd-text-primary flaticon-photo212"></i></label>
+                <div class="col-lg-9">
+                    <label class="label label-success">Imágen</label>
+                    <div class="bmd-field-group">
+                        <input type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" required ngf-model-invalid="errorFile" >
+                        <i ng-show="frmadd.file.$error.required" class="label label-danger">Campo Obligatorio</i>
+                        <br>
+                        <i ng-show="frmadd.file.$error.maxSize" class="label label-danger">Limite excedido 
+          {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+                        <img ng-show="frmadd.file.$valid" ngf-thumbnail="picFile" class="thumb" style="width: 142px;"> <a href="#" class="btn btn-danger bmd-ripple btn-xs" ng-click="picFile = null" ng-show="picFile" style="color:white;">X</a>
+                    </div>
+                </div>
+            </div>
+
 <!--             <div class="form-group has-primary" ng-class="{ 'has-error' : frmadd.otros.$invalid && frmadd.otros.$touched }">
                 <label for="textarea" class="col-lg-2 control-label "><i class="bmd-icon material-icons bmd-text-primary">assignment</i></label>
                 <div class="col-lg-9">
@@ -83,7 +99,7 @@
             </div> -->
             <div id="video"></div>
                 <div class="modal-footer bmd-border-blue-100">
-                    <button type="button" class="btn btn-primary bmd-ripple" ng-click="addcancion()" ng-disabled="!frmadd.$valid">Añadir</button>
+                    <button type="button" class="btn btn-primary bmd-ripple" ng-click="addcancion(picFile)" ng-disabled="!frmadd.$valid">Añadir</button>
                 </div>
         </form>
         </div>
@@ -113,7 +129,8 @@
                         <!-- </div> -->
                     </div>
                 <div class="modal-footer bmd-border-blue-100">
-                    <button type="button" class="btn btn-primary bmd-ripple" ng-click="guardartop10(frmadd)" ng-disabled="estadosave">Guardar</button>
+                <!-- ng-disabled="estadosave" -->
+                    <button type="button" class="btn btn-primary bmd-ripple" ng-click="guardartop10(frmadd)" >Guardar</button>
                 </div>
 
 
