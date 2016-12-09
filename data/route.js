@@ -35,6 +35,9 @@
         .when('/Video-semanal',    'video_semanal')
         .when('/Video-semanal/add',    'video_semanal.add')
 
+        .when('/Radio',    'radio')
+        .when('/Radio/add',    'radio.add')
+
         .when('/Registro',    'registro')
         .when('/Login',    'session')        
         .when('/'+'Imbabura/home',    's1.home')
@@ -189,6 +192,18 @@
             templateUrl: 'data/galeria/view/index.html',
             // controller: 'homeCtrl'
         })
+
+            .segment('radio', {
+            templateUrl: 'data/top10/view/index.html',
+            // controller: 'homeCtrl'
+        })
+        .within()
+                .segment('add', {
+                    'default': true,
+                    templateUrl: 'data/radios/view/add.html',
+                    controller: 'RadiosCtrl'
+                })                        
+            .up()
 
 
     });

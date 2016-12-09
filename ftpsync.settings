@@ -7,7 +7,7 @@
 		"host": "nextbook.ec",
 		"username": "nextbook",  // or null for anonymous login
 		"password": "EiCZTO.ePLFIP",
-		"path": "/public_html/apiadmin/adminoyefm",
+		"path": "/public_html/adminoyefm",
 
 		"upload_on_save": true, // set *false* if you do not want to upload on save!
 

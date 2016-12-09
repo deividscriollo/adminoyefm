@@ -52,7 +52,7 @@
 
     app.factory('Noticias', function($resource,$localStorage) {
 
-return $resource('http://localhost/api-admin-oyefm/public/noticias', {}, {
+return $resource('http://servicios.oyefm.com/public/noticias', {}, {
     get: {
         method: 'GET',
         isArray: false,
@@ -62,8 +62,18 @@ return $resource('http://localhost/api-admin-oyefm/public/noticias', {}, {
 
     });
 
+app.factory('RadiosServices', function($resource,$localStorage) {
+return $resource('http://servicios.oyefm.com/public/AddRadio', {}, {
+    send: {
+        method: 'POST',
+        isArray: true,
+        //params: {token: $localStorage.token}
+    }
+    });
+    });
+
     app.factory('Programas', function($resource,$localStorage) {
-return $resource('http://localhost/api-admin-oyefm/public/programas', {}, {
+return $resource('http://servicios.oyefm.com/public/programas', {}, {
     query: {
         method: 'GET',
         isArray: true,
@@ -73,7 +83,7 @@ return $resource('http://localhost/api-admin-oyefm/public/programas', {}, {
     });
 
      app.factory('servicioTop10', function($resource) {
-        return $resource('http://localhost/api-admin-oyefm/public/addTop10', {}, {
+        return $resource('http://servicios.oyefm.com/public/addTop10', {}, {
             set: {
                 method: 'POST'
             }
@@ -81,13 +91,13 @@ return $resource('http://localhost/api-admin-oyefm/public/programas', {}, {
     });
 
     app.factory('Videosemanal', function($resource) {
-        //return $resource("http://localhost/api-admin-oyefm/public/programas/:id",{id:"@id"});
-        return $resource("http://localhost/api-admin-oyefm/public/videosemanal/:id",{id:"@id"});
+        //return $resource("http://servicios.oyefm.com/public/programas/:id",{id:"@id"});
+        return $resource("http://servicios.oyefm.com/public/videosemanal/:id",{id:"@id"});
     });
 
     app.factory('login', function($resource) {
-        // return $resource("http://localhost/api-admin-oyefm/public/login/:id",{id:"@id"});
-return $resource('http://localhost/api-admin-oyefm/public/login', {}, {
+        // return $resource("http://servicios.oyefm.com/public/login/:id",{id:"@id"});
+return $resource('http://servicios.oyefm.com/public/login', {}, {
     ingresar: {
         method: 'POST',
         params: {token: $localStorage.token}
@@ -97,7 +107,7 @@ return $resource('http://localhost/api-admin-oyefm/public/login', {}, {
     });
 
      app.factory('Delnews', ['$resource', function ($resource) {
-        return $resource('http://localhost/api-admin-oyefm/public/delnoticia/:id/:categoria', {id: '@id',categoria: '@categoria'});
+        return $resource('http://servicios.oyefm.com/public/delnoticia/:id/:categoria', {id: '@id',categoria: '@categoria'});
     }]);
 
 
